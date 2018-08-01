@@ -4,17 +4,49 @@
   "description": "MonoRepo for Everything Dark Kite",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "IS_OFFLINE=true jest",
+    "codecov": "npx codecov -t ${CODECOV_TOKEN}",
+    "lint": "eslint .",
+    "build:website": "cd frontend && npm run build"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/WebGrind/dark-kite.git"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "Zane C. Milakovic <support@webgrind.io> (https://webgrind.io)",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/WebGrind/dark-kite/issues"
   },
-  "homepage": "https://github.com/WebGrind/dark-kite#readme"
+  "homepage": "https://github.com/WebGrind/dark-kite#readme",
+  "devDependencies": {
+    "aws-sdk-mock": "4.0.0",
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.4",
+    "babel-plugin-source-map-support": "^1.0.0",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-stage-3": "^6.24.1",
+    "codecov": "3.0.4",
+    "eslint": "4.19.1",
+    "eslint-config-airbnb-base": "13.0.0",
+    "eslint-plugin-import": "2.13.0",
+    "jest": "^21.2.1",
+    "jest-junit": "5.1.0",
+    "serverless": "1.27.3",
+    "serverless-domain-manager": "2.4.0",
+    "serverless-dynamodb-local": "0.2.30",
+    "serverless-offline": "^3.20.3",
+    "serverless-plugin-stage-variables": "1.7.10",
+    "serverless-webpack": "^5.1.0",
+    "webpack": "^4.2.0",
+    "webpack-node-externals": "^1.6.0"
+  },
+  "dependencies": {
+    "aws-sdk": "2.268.1",
+    "babel-runtime": "^6.26.0",
+    "source-map-support": "^0.4.18",
+    "uuid": "3.3.2"
+  }
 }

@@ -1,0 +1,8 @@
+coverage
+.vs
+node_modules
+jest.config.js
+webpack.config.js
+.next
+out
+frontend
