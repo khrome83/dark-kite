@@ -1,0 +1,32 @@
+{
+  "name": "dark-kite-webhook",
+  "version": "1.0.0",
+  "description": "Webhook Service",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Zane C. Milakovic <support@webgrind.io> (https://webgrind.io)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/WebGrind/dark-kite/issues"
+  },
+  "homepage": "https://github.com/WebGrind/dark-kite#readme",
+  "devDependencies": {
+    "serverless": "1.27.3",
+    "serverless-domain-manager": "2.4.0",
+    "serverless-dynamodb-local": "0.2.30",
+    "serverless-offline": "^3.20.3",
+    "serverless-plugin-stage-variables": "1.7.10",
+    "serverless-webpack": "^5.1.0",
+    "webpack": "^4.2.0",
+    "webpack-node-externals": "^1.6.0"
+  },
+  "dependencies": {
+    "aws-sdk": "2.268.1",
+    "babel-runtime": "^6.26.0",
+    "source-map-support": "^0.4.18",
+    "uuid": "3.3.2"
+  }
+}
