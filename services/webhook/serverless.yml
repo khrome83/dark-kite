@@ -1,4 +1,4 @@
-service: dark-kite-webhook
+service: dark-kite-webhooks
 
 plugins:
   - serverless-webpack
@@ -24,7 +24,7 @@ custom:
     dev: dev-api.dark-kite.com
   customDomain:
     domainName: ${self:custom.domains.${self:custom.stage}}
-    basePath: 'webhook'
+    basePath: 'webhooks'
     stage: ${self:custom.stage}
     createRoute53Record: true
   dynamodb:
@@ -64,7 +64,7 @@ functions:
     handler: create.default
     events:
       - http:
-          path: webhooks
+          path: /
           method: post
           cors: true
     environment:
@@ -74,7 +74,7 @@ functions:
     handler: list.default
     events:
       - http:
-          path: webhooks
+          path: /
           method: get
           cors: true
     environment:
@@ -84,7 +84,7 @@ functions:
     handler: get.default
     events:
       - http:
-          path: webhooks/{id}
+          path: /{id}
           method: get
           cors: true
     environment:
@@ -94,7 +94,7 @@ functions:
     handler: update.default
     events:
       - http:
-          path: webhooks/{id}
+          path: /{id}
           method: put
           cors: true
     environment:
@@ -104,7 +104,7 @@ functions:
     handler: delete.default
     events:
       - http:
-          path: webhooks/{id}
+          path: /{id}
           method: delete
           cors: true
     environment:
