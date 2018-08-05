@@ -1,0 +1,16 @@
+Resources:
+  ProjectsDynamo:
+    Type: 'AWS::DynamoDB::Table'
+    # Change to "Retain" in Production Ready state
+    DeletionPolicy: Delete
+    Properties:
+      TableName: ${self:custom.tables.projects}
+      AttributeDefinitions:
+        - AttributeName: id
+          AttributeType: S
+      KeySchema:
+        - AttributeName: id
+          KeyType: HASH
+      ProvisionedThroughput:
+        ReadCapacityUnits: ${self:custom.tableThroughput}
+        WriteCapacityUnits: ${self:custom.tableThroughput}
