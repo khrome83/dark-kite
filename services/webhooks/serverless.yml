@@ -1,0 +1,75 @@
+service: dark-kite-webhooks
+
+plugins:
+  - serverless-webpack
+  - serverless-dynamodb-local
+  - serverless-offline
+  - serverless-domain-manager
+  - serverless-plugin-stage-variables
+
+custom:
+  webpack:
+    webpackConfig: ../../webpack.config.js
+    includeModules:
+      forceExclude:
+        - aws-sdk
+  stage: ${opt:stage, self:provider.stage}
+  stageVariables:
+    env: ${self:custom.stage}
+  tables:
+    webhooks: webhooks-${self:custom.stage}
+    projects: projects-${self:custom.stage}
+  domains:
+    prod: api.dark-kite.com
+    stage: stage-api.dark-kite.com
+    dev: dev-api.dark-kite.com
+  customDomain:
+    domainName: ${self:custom.domains.${self:custom.stage}}
+    basePath: 'webhooks'
+    stage: ${self:custom.stage}
+    createRoute53Record: true
+  dynamodb:
+    start:
+      port: 8000
+      inMemory: true
+      migrate: true
+    migration:
+      dir: migrations
+
+package:
+  exclude:
+  - coverage/**
+  - migrations/**
+  - .circleci/**
+  - .git/**
+  - tests/**
+
+provider:
+  name: aws
+  runtime: nodejs8.10
+  stage: dev
+  region: us-east-1
+  iamRoleStatements:
+    - Effect: "Allow"
+      Action:
+        - dynamodb:Query
+        - dynamodb:GetItem
+      Resource: "arn:aws:dynamodb:*:*:table/${self:custom.tables.webhooks}"
+    - Effect: "Allow"
+      Action:
+        - dynamodb:Query
+        - dynamodb:UpdateItem
+      Resource: "arn:aws:dynamodb:*:*:table/${self:custom.tables.projects}"
+
+functions:
+
+  invoke:
+    handler: invoke.default
+    events:
+      - http:
+          path: /{id}
+          method: post
+          cors: true
+    environment:
+      WEBHOOKS_TABLE: ${self:custom.tables.webhooks}
+      PROJECTS_TABLE: ${self:custom.tables.projects}
