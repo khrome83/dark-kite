@@ -1,7 +1,7 @@
 {
-  "name": "dark-kite-webhook",
+  "name": "dark-kite-manage-webhooks",
   "version": "1.0.0",
-  "description": "Webhook Service",
+  "description": "Manage Webhooks Service",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

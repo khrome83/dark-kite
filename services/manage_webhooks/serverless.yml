@@ -1,0 +1,111 @@
+service: dark-kite-webhooks
+
+plugins:
+  - serverless-webpack
+  - serverless-dynamodb-local
+  - serverless-offline
+  - serverless-domain-manager
+  - serverless-plugin-stage-variables
+
+custom:
+  webpack:
+    webpackConfig: ../../webpack.config.js
+    includeModules:
+      forceExclude:
+        - aws-sdk
+  stage: ${opt:stage, self:provider.stage}
+  stageVariables:
+    env: ${self:custom.stage}
+  tables:
+    webhooks: webhooks-${self:custom.stage}
+  domains:
+    prod: api.dark-kite.com
+    stage: stage-api.dark-kite.com
+    dev: dev-api.dark-kite.com
+  customDomain:
+    domainName: ${self:custom.domains.${self:custom.stage}}
+    basePath: 'manage'
+    stage: ${self:custom.stage}
+    createRoute53Record: true
+  dynamodb:
+    start:
+      port: 8000
+      inMemory: true
+      migrate: true
+    migration:
+      dir: migrations
+
+package:
+  exclude:
+  - coverage/**
+  - migrations/**
+  - .circleci/**
+  - .git/**
+  - tests/**
+
+provider:
+  name: aws
+  runtime: nodejs8.10
+  stage: dev
+  region: us-east-1
+  iamRoleStatements:
+    - Effect: "Allow"
+      Action:
+        - dynamodb:Query
+        - dynamodb:Scan
+        - dynamodb:GetItem
+        - dynamodb:PutItem
+        - dynamodb:UpdateItem
+        - dynamodb:DeleteItem
+      Resource: "arn:aws:dynamodb:*:*:table/${self:custom.tables.webhooks}"
+
+functions:
+  create:
+    handler: create.default
+    events:
+      - http:
+          path: webhook/
+          method: post
+          cors: true
+    environment:
+      WEBHOOKS_TABLE: ${self:custom.tables.webhooks}
+
+  list:
+    handler: list.default
+    events:
+      - http:
+          path: webhook/
+          method: get
+          cors: true
+    environment:
+      WEBHOOKS_TABLE: ${self:custom.tables.webhooks}
+
+  get:
+    handler: get.default
+    events:
+      - http:
+          path: webhook/{id}
+          method: get
+          cors: true
+    environment:
+      WEBHOOKS_TABLE: ${self:custom.tables.webhooks}
+
+  update:
+    handler: update.default
+    events:
+      - http:
+          path: webhook/{id}
+          method: put
+          cors: true
+    environment:
+      WEBHOOKS_TABLE: ${self:custom.tables.webhooks}
+
+  delete:
+    handler: delete.default
+    events:
+      - http:
+          path: webhook/{id}
+          method: delete
+          cors: true
+    environment:
+      WEBHOOKS_TABLE: ${self:custom.tables.webhooks}
