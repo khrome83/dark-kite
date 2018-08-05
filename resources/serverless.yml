@@ -44,6 +44,8 @@ resources:
   - ${file(dynamodb-users-table.yml)}
   # DynamoDB Webhooks Table
   - ${file(dynamodb-webhooks-table.yml)}
+  # S3 Bucket Configuration
+  - ${file(s3-bucket-configuration.yml)}
   # API Gateway Stage
   - ${file(api-gateway-stage.yml)}
   # Cognito
