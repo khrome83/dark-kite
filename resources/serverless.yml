@@ -9,6 +9,8 @@ custom:
   stage: ${opt:stage, self:provider.stage}
   stageVariables:
     env: ${self:custom.stage}
+  buckets:
+    configurations: configuration-retrieval-${self:custom.stage}
   tables:
     webhooks: webhooks-${self:custom.stage}
     projects: projects-${self:custom.stage}
