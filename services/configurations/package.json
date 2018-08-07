@@ -1,5 +1,5 @@
 {
-  "name": "dark-kite-configuration",
+  "name": "dark-kite-configurations",
   "version": "1.0.0",
   "description": "Configuration Service",
   "main": "index.js",
