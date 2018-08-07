@@ -1,4 +1,4 @@
-service: dark-kite-webhooks
+service: dark-kite-manage-webhooks
 
 plugins:
   - serverless-webpack
