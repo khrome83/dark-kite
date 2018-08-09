@@ -1,5 +1,5 @@
 import * as AWS from 'aws-sdk-mock';
-import * as handler from './update';
+import * as handler from './invoke';
 
 describe('Updating Snapshot Entry', () => {
   beforeEach(() => {
