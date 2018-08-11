@@ -1,0 +1,22 @@
+{
+  "name": "dark-kite-resources",
+  "version": "1.0.0",
+  "description": "Resources Definition",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Zane C. Milakovic <support@webgrind.io> (https://webgrind.io)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/WebGrind/dark-kite/issues"
+  },
+  "homepage": "https://github.com/WebGrind/dark-kite#readme",
+  "devDependencies": {
+    "serverless": "1.30.0",
+    "serverless-domain-manager": "2.4.0",
+    "serverless-dynamodb-local": "0.2.30",
+    "serverless-plugin-stage-variables": "1.8.0"
+  }
+}
