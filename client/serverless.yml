@@ -1,0 +1,23 @@
+service: dark-kite-client
+
+plugins:
+  - serverless-finch
+
+custom:
+  stage: ${opt:stage, self:provider.stage}
+  stageVariables:
+    env: ${self:custom.stage}
+  domains:
+    prod: api.dark-kite.com
+    stage: stage-api.dark-kite.com
+    dev: dev-api.dark-kite.com
+
+  client:
+    bucketName: dark-kite-client-${self:custom.stage}
+    distributionFolder: dist
+
+provider:
+  name: aws
+  runtime: nodejs8.10
+  stage: dev
+  region: us-east-1
