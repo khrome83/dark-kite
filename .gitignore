@@ -64,3 +64,5 @@ frontend/out
 
 # MacOS
 .DS_Store
+
+dist/
