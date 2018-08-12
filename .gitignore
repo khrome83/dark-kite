@@ -65,4 +65,8 @@ frontend/out
 # MacOS
 .DS_Store
 
-dist/
+# Nuxt build
+.nuxt
+
+# Nuxt generate
+dist
