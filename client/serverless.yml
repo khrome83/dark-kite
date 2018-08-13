@@ -15,6 +15,8 @@ custom:
   client:
     bucketName: dark-kite-client-${self:custom.stage}
     distributionFolder: dist
+    indexDocument: index.html
+    errorDocument: error.html
 
 provider:
   name: aws
