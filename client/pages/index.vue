@@ -18,16 +18,19 @@
           target="_blank"
           class="button--grey">GitHub</a>
       </div>
+      <feature-list />
     </div>
   </section>
 </template>
 
 <script>
-import AppLogo from '~/components/AppLogo.vue'
+import AppLogo from '~/components/AppLogo.vue';
+import FeatureList from '~/components/FeatureList.vue';
 
 export default {
   components: {
-    AppLogo
+    AppLogo,
+    FeatureList,
   }
 }
 </script>
