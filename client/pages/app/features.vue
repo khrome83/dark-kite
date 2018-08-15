@@ -28,6 +28,7 @@ import AppLogo from '~/components/AppLogo.vue';
 import FeatureList from '~/components/FeatureList.vue';
 
 export default {
+  layout: 'app',
   components: {
     AppLogo,
     FeatureList,
