@@ -1,6 +1,6 @@
 <template>
   <a class="button" v-bind:class="{alt: alt}" v-bind="attrs">
-    {{children}}
+    <slot />
   </a>
 </template>
 
