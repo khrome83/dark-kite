@@ -1,7 +1,7 @@
 <template>
   <section class="container">
     <div>
-      <app-logo/>
+      <AppLogo/>
       <h1 class="title">
         App
       </h1>
@@ -18,7 +18,9 @@
           target="_blank"
           class="button--grey">GitHub</a>
       </div>
-      <feature-list />
+      <FeatureList />
+      <Button target="_blank" alt>Testing</Button>
+      <Button href="https://insiderx.com" target="_blank">Testing</Button>
     </div>
   </section>
 </template>
@@ -26,12 +28,14 @@
 <script>
 import AppLogo from '~/components/AppLogo.vue';
 import FeatureList from '~/components/FeatureList.vue';
+import Button from '~/components/Button.vue';
 
 export default {
   layout: 'app',
   components: {
     AppLogo,
     FeatureList,
+    Button,
   }
 }
 </script>
