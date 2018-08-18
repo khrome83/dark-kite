@@ -1,5 +1,5 @@
 <template>
-  <a class="button" v-bind:class="{alt: alt}" v-bind="attrs">
+  <a class="button" v-bind:class="{alt: alt}" v-bind:href="href" v-bind:target="target">
     <slot />
   </a>
 </template>
@@ -11,12 +11,12 @@ export default {
     target: String,
     alt: Boolean,
   },
-  data: () => ({
-    attrs: {
-      target: this.target || null,
-      href: this.href || '#',
-    }
-  }),
+  // data: () => ({
+  //   attrs: {
+  //     target: this.target || null,
+  //     href: this.href || '#',
+  //   }
+  // }),
 }
 </script>
 
@@ -28,6 +28,7 @@ export default {
     color: #3b8070;
     text-decoration: none;
     padding: 10px 30px;
+    cursor: pointer;
   }
 
   .button:hover {
