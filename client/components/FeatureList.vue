@@ -30,5 +30,6 @@ export default {
     text-align: left;
     display: flex;
     flex-direction: column;
+    width: 100%;
   }
 </style>
