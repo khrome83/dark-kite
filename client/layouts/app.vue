@@ -1,11 +1,24 @@
 <template>
   <div>
-    <nav class="nav">
-      hello
-    </nav>
-    <nuxt/>
+    <NavigationSidebar />
+    <AppSection>
+      <nuxt/>
+    </AppSection>
   </div>
 </template>
+
+<script>
+import AppSection from '~/components/AppSection';
+import NavigationSidebar from '~/components/NavigationSidebar';
+
+export default {
+  components: {
+    AppSection,
+    NavigationSidebar,
+  },
+};
+</script>
+
 
 <style>
 html {
@@ -24,39 +37,34 @@ html {
   margin: 0;
 }
 
-nav {
-  background-color: #3b8070;
-  color: #fff;
+body {
+  overflow: hidden;
+}
+
+h1, h2, h3, h4 {
+  font-family: "Quicksand", "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   display: block;
-}
-
-.button--green {
-  display: inline-block;
-  border-radius: 4px;
-  border: 1px solid #3b8070;
-  color: #3b8070;
-  text-decoration: none;
-  padding: 10px 30px;
-}
-
-.button--green:hover {
-  color: #fff;
-  background-color: #3b8070;
-}
-
-.button--grey {
-  display: inline-block;
-  border-radius: 4px;
-  border: 1px solid #35495e;
+  font-weight: 300;
+  font-size: 3rem;
   color: #35495e;
-  text-decoration: none;
-  padding: 10px 30px;
-  margin-left: 15px;
+  letter-spacing: 1px;
+  text-align: left;
 }
 
-.button--grey:hover {
-  color: #fff;
-  background-color: #35495e;
+h2 {
+  font-size: 2.25rem;
+  color: #526488;
+  word-spacing: 5px;
+  padding-bottom: 15px;
+}
+
+h3 {
+  font-size: 1.75rem;
+}
+
+h4 {
+  font-size: 1rem;
+  color: #526488;
 }
 </style>
 
