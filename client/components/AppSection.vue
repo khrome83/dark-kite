@@ -1,8 +1,21 @@
 <template>
   <section class="container">
-    <slot />
+    <div class="content">
+      <slot />
+    </div>
+    <AppFooter />
   </section>
 </template>
+
+<script>
+import AppFooter from '~/components/AppFooter';
+
+export default {
+  components: {
+    AppFooter,
+  },
+};
+</script>
 
 <style>
 .container {
@@ -17,6 +30,10 @@
   left: 16rem;
   overflow-x: hidden;
   overflow-y: scroll;
+  justify-content: space-between;
+}
+
+.content {
   padding: 1rem;
 }
 </style>
