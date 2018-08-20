@@ -15,7 +15,7 @@ export default {
     features: [
       { name: 'Offline', accessKey: 'offline', enabled: true },
       { name: 'Image Search', accessKey: 'imageSearch', enabled: false },
-      { name: 'Image Diff', accessKey: 'Image Diff', enabled: false },
+      { name: 'Image Diff', accessKey: 'imageDiff', enabled: false },
     ]
   }),
 }
