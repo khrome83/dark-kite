@@ -29,6 +29,7 @@ export default {
     text-decoration: none;
     padding: 10px 30px;
     cursor: pointer;
+    font-size: 1.2rem;
   }
 
   .button:hover {
