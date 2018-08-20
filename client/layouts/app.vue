@@ -1,6 +1,16 @@
 <template>
   <div>
-    <Sidebar />
+    <Sidebar>
+      <div slot="logo">
+        Logo
+      </div>
+      <div slot="primary">
+        Primary
+      </div>
+      <div slot="secondary">
+        Secondary
+      </div>
+    </Sidebar>
     <Section>
       <nuxt/>
     </Section>

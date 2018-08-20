@@ -1,6 +1,8 @@
 <template>
   <nav class="sidebar">
-    Menu
+    <slot name=logo />
+    <slot name="primary" />
+    <slot name="secondary" />
   </nav>
 </template>
 
@@ -17,5 +19,7 @@ nav {
   overflow-x: hidden;
   overflow-y: scroll;
   padding: 1rem;
+  flex-direction: column;
+  justify-content: space-between;
 }
 </style>
