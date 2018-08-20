@@ -2,7 +2,7 @@
   <div>
     <h1>Container Heading</h1>
     <h2>Subtitle Heading</h2>
-    <FeatureList />
+    <ToggleList />
     <div>
       <Button target="_blank" alt>Testing</Button>
       <Button href="https://insiderx.com" target="_blank">Testing</Button>
@@ -11,13 +11,13 @@
 </template>
 
 <script>
-import FeatureList from '~/components/FeatureList.vue';
-import Button from '~/components/Button.vue';
+import ToggleList from '~/components/App/ToggleList.vue';
+import Button from '~/components/General/Button.vue';
 
 export default {
   layout: 'app',
   components: {
-    FeatureList,
+    ToggleList,
     Button,
   }
 }

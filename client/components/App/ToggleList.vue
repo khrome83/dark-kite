@@ -1,15 +1,15 @@
 <template>
   <div class="list">
-    <feature-toggle v-for="feature in features" :key="feature.accessKey" v-bind="feature" />
+    <Toggle v-for="feature in features" :key="feature.accessKey" v-bind="feature" />
   </div>
 </template>
 
 <script>
-import FeatureToggle from '~/components/FeatureToggle.vue';
+import Toggle from '~/components/App/Toggle.vue';
 
 export default {
   components: {
-    FeatureToggle,
+    Toggle,
   },
   data: () => ({
     features: [

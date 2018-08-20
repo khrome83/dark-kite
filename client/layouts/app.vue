@@ -1,20 +1,20 @@
 <template>
   <div>
-    <NavigationSidebar />
-    <AppSection>
+    <Sidebar />
+    <Section>
       <nuxt/>
-    </AppSection>
+    </Section>
   </div>
 </template>
 
 <script>
-import AppSection from '~/components/AppSection';
-import NavigationSidebar from '~/components/NavigationSidebar';
+import Section from '~/components/App/Section';
+import Sidebar from '~/components/App/Sidebar';
 
 export default {
   components: {
-    AppSection,
-    NavigationSidebar,
+    Section,
+    Sidebar,
   },
 };
 </script>
