@@ -5,8 +5,8 @@
       <div class="key">({{accessKey}})</div>
     </div>
     <div class="toggle" v-on:click="toggle">
-      <span class="off" v-bind:class="{ active: !enabled }">OFF</span>
-      <span class="on" v-bind:class="{ active: enabled }">ON</span>
+      <span class="off" v-bind:class="{ active: !isEnabled }">OFF</span>
+      <span class="on" v-bind:class="{ active: isEnabled }">ON</span>
     </div>
   </div>
 </template>
@@ -16,14 +16,19 @@ export default {
   props: {
     name: String,
     accessKey: String,
-    enabled: Boolean,
+    enabled: {
+      type: Boolean,
+      default: false,
+    },
   },
-  data: () => ({
-    enabled: this.enabled || false,
-  }),
+  data: function () {
+    return {
+      isEnabled: this.enabled,
+    };
+  },
   methods: {
-    toggle() {
-      this.enabled = !this.enabled;
+    toggle: function () {
+      this.isEnabled = !this.isEnabled;
     }
   }
 }
