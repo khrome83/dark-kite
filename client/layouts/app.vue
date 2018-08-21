@@ -2,10 +2,10 @@
   <div>
     <Sidebar>
       <div slot="logo">
-        Logo
+        <a href="/app">Logo</a>
       </div>
       <div slot="primary">
-        Primary
+        <sidebar-link />
       </div>
       <div slot="secondary">
         Secondary
@@ -20,11 +20,13 @@
 <script>
 import Section from '~/components/App/Section';
 import Sidebar from '~/components/App/Sidebar';
+import SidebarLink from '~/components/App/SidebarLink';
 
 export default {
   components: {
     Section,
     Sidebar,
+    SidebarLink,
   },
 };
 </script>
