@@ -47,6 +47,6 @@
   justify-content: space-between;
   overflow-x: hidden;
   overflow-y: scroll;
-  padding: 1rem;
+  padding-bottom: 3rem;
 }
 </style>
