@@ -5,10 +5,36 @@
         <a href="/app">Logo</a>
       </div>
       <div slot="primary">
-        <sidebar-link />
+        <sidebar-link to="/app/projects">
+          <ProjectIcon slot="icon" />
+          Projects
+        </sidebar-link>
+        <sidebar-link to="/app/features">
+          <FeatureIcon slot="icon" />
+          Features
+        </sidebar-link>
+        <sidebar-link to="/app/configurations">
+          <ConfigurationIcon slot="icon" />
+          Configurations
+        </sidebar-link>
       </div>
       <div slot="secondary">
-        Secondary
+        <sidebar-link to="/app/help">
+          <HelpIcon slot="icon" />
+          Help
+        </sidebar-link>
+        <sidebar-link to="/app/billing">
+          <BillingIcon slot="icon" />
+          Billing
+        </sidebar-link>
+        <sidebar-link to="/app/organization">
+          <OrganizationIcon slot="icon" />
+          Organization
+        </sidebar-link>
+        <sidebar-link to="/app/profile">
+          <ProfileIcon slot="icon" />
+          Profile
+        </sidebar-link>
       </div>
     </Sidebar>
     <Section>
@@ -21,12 +47,26 @@
 import Section from '~/components/App/Section';
 import Sidebar from '~/components/App/Sidebar';
 import SidebarLink from '~/components/App/SidebarLink';
+import BillingIcon from '~/static/billing.svg';
+import ConfigurationIcon from '~/static/configuration.svg';
+import FeatureIcon from '~/static/feature.svg';
+import HelpIcon from '~/static/help.svg';
+import OrganizationIcon from '~/static/organization.svg';
+import ProfileIcon from '~/static/profile.svg';
+import ProjectIcon from '~/static/project.svg';
 
 export default {
   components: {
     Section,
     Sidebar,
     SidebarLink,
+    BillingIcon,
+    ConfigurationIcon,
+    FeatureIcon,
+    HelpIcon,
+    OrganizationIcon,
+    ProfileIcon,
+    ProjectIcon,
   },
 };
 </script>
