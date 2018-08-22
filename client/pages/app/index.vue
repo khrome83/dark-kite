@@ -1,7 +1,7 @@
 <template>
   <div>
-    <h1>Container Heading</h1>
-    <h2>Subtitle Heading</h2>
+    <h1>Entrance</h1>
+    <h2>Subheading</h2>
     <ToggleList />
     <div>
       <Button target="_blank" alt>Testing</Button>
