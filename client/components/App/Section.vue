@@ -27,7 +27,7 @@ export default {
   top: 0;
   right: 0;
   bottom: 0;
-  left: 16rem;
+  left: 13rem;
   overflow-x: hidden;
   overflow-y: scroll;
   justify-content: space-between;
