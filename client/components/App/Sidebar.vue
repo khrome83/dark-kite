@@ -16,20 +16,19 @@
 
 <style>
 .sidebar {
-  background-color: #3b8070;
+  background-image: linear-gradient(to right bottom, #3b8070, #398e77, #399c7c, #3caa80, #41b883);
   color: #fff;
   display: flex;
   position: absolute;
   top: 0;
   bottom: 0;
   left: 0;
-  width: 16rem;
+  width: 13rem;
   overflow: hidden;
   flex-direction: column;
 }
 
 .logo {
-  height: 4rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -38,7 +37,7 @@
 
 .navigation {
   position: absolute;
-  top: 4rem;
+  top: 13rem;
   right: 0;
   bottom: 0;
   left: 0;
@@ -47,6 +46,6 @@
   justify-content: space-between;
   overflow-x: hidden;
   overflow-y: scroll;
-  padding-bottom: 3rem;
+  padding: 2rem 0;
 }
 </style>
