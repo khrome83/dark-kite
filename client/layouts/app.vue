@@ -1,9 +1,7 @@
 <template>
   <div>
     <Sidebar>
-      <div slot="logo">
-        <a href="/app">Logo</a>
-      </div>
+      <Logo slot="logo" to="/app" />
       <div slot="primary">
         <sidebar-link to="/app/projects">
           <ProjectIcon slot="icon" />
@@ -46,6 +44,7 @@
 <script>
 import Section from '~/components/App/Section';
 import Sidebar from '~/components/App/Sidebar';
+import Logo from '~/components/App/Logo';
 import SidebarLink from '~/components/App/SidebarLink';
 import BillingIcon from '~/static/billing.svg';
 import ConfigurationIcon from '~/static/configuration.svg';
@@ -59,6 +58,7 @@ export default {
   components: {
     Section,
     Sidebar,
+    Logo,
     SidebarLink,
     BillingIcon,
     ConfigurationIcon,
