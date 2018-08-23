@@ -55,10 +55,11 @@ export default {
   overflow: hidden;
   background-color: rgba(0, 0, 0, .5);
   transition: background-color 0.3s ease;
+  transform-origin: right;
 }
 
 .overpanel-container {
-  position: fixed;
+  position: absolute;
   z-index: 9999;
   top: 0;
   right: 0;
@@ -66,7 +67,9 @@ export default {
   width: 60rem;
   background-color: #fff;
   padding: 1rem;
-  transition: right .3s ease;
+  transform: translateX(0);
+  transition: transform .3s ease;
+
 }
 
 .overpanel-header h3 {
@@ -94,12 +97,14 @@ export default {
 
 .overpanel-enter .overpanel-container,
 .overpanel-leave-to .overpanel-container {
-  right: -60rem;
+  /* right: -60rem; */
+  transform: translateX(-60rem);
 }
 
 .overpanel-enter-to .overpanel-container,
 .overpanel-leave .overpanel-container {
-  right: 0;
+  /* right: 0; */
+  transform: translateX(0);
 }
 </style>
 
