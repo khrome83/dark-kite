@@ -33,7 +33,7 @@
 export default {
   data: function () {
     return {
-      showOverPanel: true,
+      showOverPanel: false,
     };
   },
   methods: {
@@ -54,6 +54,7 @@ export default {
   left: 0;
   overflow: hidden;
   background-color: rgba(0, 0, 0, .5);
+  transition: background-color 0.3s ease;
 }
 
 .overpanel-container {
@@ -65,6 +66,7 @@ export default {
   width: 60rem;
   background-color: #fff;
   padding: 1rem;
+  transition: right .3s ease;
 }
 
 .overpanel-header h3 {
@@ -80,9 +82,14 @@ export default {
   float: right;
 }
 
-.overpanel-enter-active,
-.overpanel-leave-active {
-  transition: all .8s ease;
+.overpanel-enter,
+.overpanel-leave-to{
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.overpanel-enter-to,
+.overpanel-leave {
+  background-color: rgba(0, 0, 0, .5);
 }
 
 .overpanel-enter .overpanel-container,
@@ -90,19 +97,9 @@ export default {
   right: -60rem;
 }
 
-.overpanel-enter-to .overpanel-mask,
-.overpanel-leave .overpanel-mask {
+.overpanel-enter-to .overpanel-container,
+.overpanel-leave .overpanel-container {
   right: 0;
-}
-
-.overpanel-enter .overpanel-container,
-.overpanel-leave-to .overpanel-container {
-  background-color: rgba(0, 0, 0, 0);
-}
-
-.overpanel-enter-to .overpanel-mask,
-.overpanel-leave .overpanel-mask {
-  background-color: rgba(0, 0, 0, .5);
 }
 </style>
 
