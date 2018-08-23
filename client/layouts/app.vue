@@ -38,12 +38,14 @@
     <Section>
       <nuxt/>
     </Section>
+    <over-panel />
   </div>
 </template>
 
 <script>
 import Section from '~/components/App/Section';
 import Sidebar from '~/components/App/Sidebar';
+import OverPanel from '~/components/App/OverPanel';
 import Logo from '~/components/App/Logo';
 import SidebarLink from '~/components/App/SidebarLink';
 import BillingIcon from '~/static/billing.svg';
@@ -58,6 +60,7 @@ export default {
   components: {
     Section,
     Sidebar,
+    OverPanel,
     Logo,
     SidebarLink,
     BillingIcon,
