@@ -3,19 +3,19 @@
     <h1>Billing</h1>
     <h2>Subheading</h2>
     <div>
-      <button-primary target="_blank" alt>Testing</button-primary>
-      <button-primary href="https://insiderx.com" target="_blank">Testing</button-primary>
+      <base-button target="_blank" alt>Testing</base-button>
+      <base-button href="https://insiderx.com" target="_blank" secondary>Testing</base-button>
     </div>
   </div>
 </template>
 
 <script>
-import ButtonPrimary from '~/components/ButtonPrimary.vue';
+import BaseButton from '~/components/BaseButton.vue';
 
 export default {
   layout: 'app',
   components: {
-    ButtonPrimary,
+    BaseButton,
   }
 }
 </script>
