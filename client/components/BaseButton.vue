@@ -1,5 +1,5 @@
 <template>
-  <a class="button" v-bind:href="href" v-bind:target="target">
+  <a class="button" v-bind:class="{secondary: secondary}" v-bind:href="href" v-bind:target="target">
     <slot />
   </a>
 </template>
@@ -10,6 +10,10 @@ export default {
     href: {
       type: String,
       default: '#',
+    },
+    secondary: {
+      type: Boolean,
+      default: false,
     },
     target: String,
   },
@@ -35,9 +39,21 @@ export default {
     font-weight: 500;
   }
 
+  .button.secondary {
+    border-image: linear-gradient(to right bottom, #35495e, #3a5774, #40658a, #4573a1, #4b81b9);
+    border-image-slice: 1;
+    background: linear-gradient(to right bottom, #35495e, #3a5774, #40658a, #4573a1, #4b81b9);
+    -webkit-background-clip: text;
+    text-fill-color: transparent;
+  }
+
   .button:hover {
     color: #fff;
     background: linear-gradient(to right bottom, #3b8070, #398e77, #399c7c, #3caa80, #41b883);
     transition: all 0.5s ease;
+  }
+
+  .button.secondary:hover {
+    background: linear-gradient(to right bottom, #35495e, #3a5774, #40658a, #4573a1, #4b81b9);
   }
 </style>
