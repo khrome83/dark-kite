@@ -3,16 +3,16 @@
     <div class="content">
       <slot />
     </div>
-    <app-footer />
+    <the-app-footer />
   </section>
 </template>
 
 <script>
-import AppFooter from '~/components/AppFooter';
+import TheAppFooter from '~/components/TheAppFooter';
 
 export default {
   components: {
-    AppFooter,
+    TheAppFooter,
   },
 };
 </script>

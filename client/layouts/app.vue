@@ -1,53 +1,53 @@
 <template>
   <div>
-    <side-navigation>
-      <large-logo slot="logo" to="/app" />
+    <the-sidebar>
+      <the-sidebar-logo slot="logo" to="/app" />
       <div slot="primary">
-        <side-navigation-link to="/app/projects">
+        <the-sidebar-link to="/app/projects">
           <ProjectIcon slot="icon" />
           Projects
-        </side-navigation-link>
-        <side-navigation-link to="/app/features">
+        </the-sidebar-link>
+        <the-sidebar-link to="/app/features">
           <FeatureIcon slot="icon" />
           Features
-        </side-navigation-link>
-        <side-navigation-link to="/app/configurations">
+        </the-sidebar-link>
+        <the-sidebar-link to="/app/configurations">
           <ConfigurationIcon slot="icon" />
           Configurations
-        </side-navigation-link>
+        </the-sidebar-link>
       </div>
       <div slot="secondary">
-        <side-navigation-link to="/app/help">
+        <the-sidebar-link to="/app/help">
           <HelpIcon slot="icon" />
           Help
-        </side-navigation-link>
-        <side-navigation-link to="/app/billing">
+        </the-sidebar-link>
+        <the-sidebar-link to="/app/billing">
           <BillingIcon slot="icon" />
           Billing
-        </side-navigation-link>
-        <side-navigation-link to="/app/organization">
+        </the-sidebar-link>
+        <the-sidebar-link to="/app/organization">
           <OrganizationIcon slot="icon" />
           Organization
-        </side-navigation-link>
-        <side-navigation-link to="/app/profile">
+        </the-sidebar-link>
+        <the-sidebar-link to="/app/profile">
           <ProfileIcon slot="icon" />
           Profile
-        </side-navigation-link>
+        </the-sidebar-link>
       </div>
-    </side-navigation>
-    <app-section>
+    </the-sidebar>
+    <the-app-section>
       <nuxt/>
-    </app-section>
+    </the-app-section>
     <over-panel />
   </div>
 </template>
 
 <script>
-import AppSection from '~/components/AppSection';
-import SideNavigation from '~/components/SideNavigation';
-import SideNavigationLink from '~/components/SideNavigationLink';
+import TheSidebar from '~/components/TheSidebar';
+import TheSidebarLink from '~/components/TheSidebarLink';
+import TheSidebarLogo from '~/components/TheSidebarLogo';
+import TheAppSection from '~/components/TheAppSection';
 import OverPanel from '~/components/OverPanel';
-import LargeLogo from '~/components/LargeLogo';
 import BillingIcon from '~/static/billing.svg';
 import ConfigurationIcon from '~/static/configuration.svg';
 import FeatureIcon from '~/static/feature.svg';
@@ -58,11 +58,11 @@ import ProjectIcon from '~/static/project.svg';
 
 export default {
   components: {
-    AppSection,
-    SideNavigation,
-    SideNavigationLink,
+    TheSidebar,
+    TheSidebarLink,
+    TheSidebarLogo,
+    TheAppSection,
     OverPanel,
-    LargeLogo,
     BillingIcon,
     ConfigurationIcon,
     FeatureIcon,
