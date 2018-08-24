@@ -1,53 +1,53 @@
 <template>
   <div>
-    <Sidebar>
-      <Logo slot="logo" to="/app" />
+    <side-navigation>
+      <large-logo slot="logo" to="/app" />
       <div slot="primary">
-        <sidebar-link to="/app/projects">
+        <side-navigation-link to="/app/projects">
           <ProjectIcon slot="icon" />
           Projects
-        </sidebar-link>
-        <sidebar-link to="/app/features">
+        </side-navigation-link>
+        <side-navigation-link to="/app/features">
           <FeatureIcon slot="icon" />
           Features
-        </sidebar-link>
-        <sidebar-link to="/app/configurations">
+        </side-navigation-link>
+        <side-navigation-link to="/app/configurations">
           <ConfigurationIcon slot="icon" />
           Configurations
-        </sidebar-link>
+        </side-navigation-link>
       </div>
       <div slot="secondary">
-        <sidebar-link to="/app/help">
+        <side-navigation-link to="/app/help">
           <HelpIcon slot="icon" />
           Help
-        </sidebar-link>
-        <sidebar-link to="/app/billing">
+        </side-navigation-link>
+        <side-navigation-link to="/app/billing">
           <BillingIcon slot="icon" />
           Billing
-        </sidebar-link>
-        <sidebar-link to="/app/organization">
+        </side-navigation-link>
+        <side-navigation-link to="/app/organization">
           <OrganizationIcon slot="icon" />
           Organization
-        </sidebar-link>
-        <sidebar-link to="/app/profile">
+        </side-navigation-link>
+        <side-navigation-link to="/app/profile">
           <ProfileIcon slot="icon" />
           Profile
-        </sidebar-link>
+        </side-navigation-link>
       </div>
-    </Sidebar>
-    <Section>
+    </side-navigation>
+    <app-section>
       <nuxt/>
-    </Section>
+    </app-section>
     <over-panel />
   </div>
 </template>
 
 <script>
-import Section from '~/components/App/Section';
-import Sidebar from '~/components/App/Sidebar';
-import OverPanel from '~/components/App/OverPanel';
-import Logo from '~/components/App/Logo';
-import SidebarLink from '~/components/App/SidebarLink';
+import AppSection from '~/components/AppSection';
+import SideNavigation from '~/components/SideNavigation';
+import SideNavigationLink from '~/components/SideNavigationLink';
+import OverPanel from '~/components/OverPanel';
+import LargeLogo from '~/components/LargeLogo';
 import BillingIcon from '~/static/billing.svg';
 import ConfigurationIcon from '~/static/configuration.svg';
 import FeatureIcon from '~/static/feature.svg';
@@ -58,11 +58,11 @@ import ProjectIcon from '~/static/project.svg';
 
 export default {
   components: {
-    Section,
-    Sidebar,
+    AppSection,
+    SideNavigation,
+    SideNavigationLink,
     OverPanel,
-    Logo,
-    SidebarLink,
+    LargeLogo,
     BillingIcon,
     ConfigurationIcon,
     FeatureIcon,

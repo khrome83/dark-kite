@@ -2,23 +2,23 @@
   <div>
     <h1>Features</h1>
     <h2>Subheading</h2>
-    <ToggleList />
+    <feature-toggle-set />
     <div>
-      <Button target="_blank" alt>Testing</Button>
-      <Button href="https://insiderx.com" target="_blank">Testing</Button>
+      <button-primary target="_blank" alt>Testing</button-primary>
+      <button-primary href="https://insiderx.com" target="_blank">Testing</button-primary>
     </div>
   </div>
 </template>
 
 <script>
-import ToggleList from '~/components/App/ToggleList.vue';
-import Button from '~/components/General/Button.vue';
+import FeatureToggleSet from '~/components/FeatureToggleSet.vue';
+import ButtonPrimary from '~/components/ButtonPrimary.vue';
 
 export default {
   layout: 'app',
   components: {
-    ToggleList,
-    Button,
+    FeatureToggleSet,
+    ButtonPrimary,
   }
 }
 </script>
