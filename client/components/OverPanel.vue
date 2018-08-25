@@ -1,6 +1,6 @@
 <template>
   <transition name="overpanel">
-    <div class="overpanel-mask" v-if="$store.state.open" @click="$store.commit('close')">
+    <div class="overpanel-mask" v-if="$store.state.open" @click.self="$store.commit('close')">
       <div class="overpanel-container">
 
         <div class="overpanel-header">
