@@ -21,39 +21,65 @@ export default {
 </script>
 
 <style scoped>
-  .button {
-    margin: 1em;
-    color: transparent;
-    font-size: 1.2rem;
-    border: 2px solid transparent;
-    border-image: linear-gradient(to right bottom, #3b8070, #398e77, #399c7c, #3caa80, #41b883);
-    border-image-slice: 1;
-    background: linear-gradient(to right bottom, #3b8070, #398e77, #399c7c, #3caa80, #41b883);
+  .button,
+  .button:hover,
+  .button:active {
+    position: relative;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    background-color: transparent;
+    padding: 0.8rem 2rem;
     display: inline-block;
+    font-size: 1.2rem;
+    text-decoration: none;
+    cursor: pointer;
+    color: transparent;
+    background: linear-gradient(to right bottom, #3b8070, #398e77, #399c7c, #3caa80, #41b883);
     -webkit-background-clip: text;
     text-fill-color: transparent;
-    transition: all 0.5s ease;
-    text-decoration: none;
-    padding: 10px 30px;
-    cursor: pointer;
-    font-weight: 500;
+    margin: 1rem;
   }
 
-  .button.secondary {
-    border-image: linear-gradient(to right bottom, #35495e, #3a5774, #40658a, #4573a1, #4b81b9);
-    border-image-slice: 1;
+  .button::before {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(to right bottom, #3b8070, #398e77, #399c7c, #3caa80, #41b883);
+    content: '';
+    z-index: -2;
+    border-radius: 4px;
+  }
+
+  .button::after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: #fff;
+    content: '';
+    z-index: -1;
+    border-radius: 4px;
+    border: 1px solid transparent;
+    background-clip: padding-box;
+  }
+
+  .button:hover::after {
+    border: 2px solid transparent;
+  }
+
+  .button.secondary,
+  .button.secondary:hover,
+  .button.secondary:active {
+    color: transparent;
     background: linear-gradient(to right bottom, #35495e, #3a5774, #40658a, #4573a1, #4b81b9);
     -webkit-background-clip: text;
     text-fill-color: transparent;
   }
 
-  .button:hover {
-    color: #fff;
-    background: linear-gradient(to right bottom, #3b8070, #398e77, #399c7c, #3caa80, #41b883);
-    transition: all 0.5s ease;
-  }
-
-  .button.secondary:hover {
+  .button.secondary::before {
     background: linear-gradient(to right bottom, #35495e, #3a5774, #40658a, #4573a1, #4b81b9);
   }
 </style>
