@@ -1,6 +1,6 @@
 export const state = () => ({
   open: true,
-})
+});
 
 export const mutations = {
   toggle (state) {
@@ -9,4 +9,4 @@ export const mutations = {
   close (state) {
     state.open = false;
   }
-}
+};
