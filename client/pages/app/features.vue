@@ -4,8 +4,11 @@
     <h2>Subheading</h2>
     <feature-list />
     <div>
-      <base-button target="_blank" alt>Testing</base-button>
+      <base-button @click="$store.commit('toggle')">Testing</base-button>
       <base-button href="https://insiderx.com" target="_blank" secondary>Testing</base-button>
+      <button @click="$store.commit('toggle')">
+        Open
+      </button>
     </div>
   </div>
 </template>
