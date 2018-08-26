@@ -1,6 +1,6 @@
 <template>
   <transition name="overpanel">
-    <div class="overpanel-mask" v-if="$store.state.open" @click.self="$store.commit('close')">
+    <div class="overpanel-mask" v-if="$store.state.overpanel.open" @click.once.self="close">
       <div class="overpanel-container">
 
         <div class="overpanel-header">
@@ -18,7 +18,7 @@
         <div class="overpanel-footer">
           <slot name="footer">
             default footer
-            <button class="overpanel-default-button" @click="$store.commit('toggle')">
+            <button class="overpanel-default-button" @click="toggle">
               OK
             </button>
           </slot>
@@ -30,18 +30,16 @@
 </template>
 
 <script>
+import { mapMutations } from 'vuex';
+
 export default {
-  data: function () {
-    return {
-      showOverPanel: true,
-    };
-  },
   methods: {
-    close: function () {
-      console.log('close')
-      this.showOverPanel = false;
-    }
-  }
+    ...mapMutations({
+      toggle: 'overpanel/toggle',
+      close: 'overpanel/close',
+      open: 'overpanel/open',
+    }),
+  },
 }
 </script>
 
