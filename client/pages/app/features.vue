@@ -4,8 +4,8 @@
     <h2>Subheading</h2>
     <feature-list />
     <div>
-      <base-button @click="$store.commit('toggle')">Testing</base-button>
-      <base-button href="https://insiderx.com" target="_blank" secondary>Testing</base-button>
+      <base-button @click.prevent.native="$store.commit('toggle')">Testing</base-button>
+      <base-button to="https://insiderx.com" secondary>Testing</base-button>
       <button @click="$store.commit('toggle')">
         Open
       </button>

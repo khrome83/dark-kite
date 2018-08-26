@@ -1,21 +1,43 @@
 <template>
-  <a class="button" v-bind:class="{secondary: secondary}" v-bind:href="href" v-bind:target="target">
-    <slot />
-  </a>
+  <component :is="element" v-bind="linkProps" class="button" :class="{secondary: secondary}">
+    <slot></slot>
+  </component>
 </template>
 
 <script>
 export default {
   props: {
-    href: {
+    to: {
       type: String,
       default: '#',
+    },
+    title: {
+      type: String,
     },
     secondary: {
       type: Boolean,
       default: false,
     },
-    target: String,
+  },
+  computed: {
+    element () {
+      return (/((https{0,1}|ftp|tel|mail):\/\/)|^www.|.{1}(com|net|org|io)/i.test(this.to)) ? 'a' : 'router-link';
+    },
+    linkProps () {
+      if (this.element === 'a') {
+        return {
+          href: this.to,
+          target: '_blank',
+          rel: 'noopener',
+          title: this.title,
+        }
+      }
+
+      return {
+        to: this.to,
+        title: this.title,
+      }
+    }
   },
 }
 </script>
