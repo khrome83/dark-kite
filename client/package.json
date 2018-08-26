@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/WebGrind/dark-kite#readme",
   "dependencies": {
+    "css.escape": "1.5.1",
     "nuxt": "^1.0.0"
   },
   "devDependencies": {

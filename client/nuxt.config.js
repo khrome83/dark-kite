@@ -25,6 +25,14 @@ module.exports = {
   ** Build configuration
   */
   build: {
+
+    /*
+    ** Vendor Modules
+    */
+    vendor: [
+      'css.escape',
+    ],
+
     /*
     ** Run ESLint on save
     */
