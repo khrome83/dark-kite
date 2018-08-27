@@ -1,7 +1,7 @@
 <template>
   <transition name="overpanel">
     <div class="overpanel-mask" v-if="$store.state.overpanel.open" @click.once.self="close">
-      <div class="overpanel-container">
+      <div class="overpanel-container" @keydown.esc="close">
 
         <div class="overpanel-header">
           <span class="header-text">
@@ -9,7 +9,7 @@
           </span>
         </div>
 
-        <button class="close" @click="toggle">
+        <button class="close" @click.once.self="close">
           <CloseIcon />
         </button>
 
