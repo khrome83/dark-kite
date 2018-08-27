@@ -1,7 +1,7 @@
 <template>
   <transition name="overpanel">
-    <div class="overpanel-mask" v-if="$store.state.overpanel.open" @click.once.self="close">
-      <div class="overpanel-container" @keydown.esc="close">
+    <div class="overpanel-mask" v-if="$store.state.overpanel.overpanelVisible" @click.once.self="closeOverpanel">
+      <div class="overpanel-container" @keydown.esc="closeOverpanel">
 
         <div class="overpanel-header">
           <span class="header-text">
@@ -9,20 +9,18 @@
           </span>
         </div>
 
-        <button class="close" @click.once.self="close">
+        <button class="close" @click="closeOverpanel">
           <CloseIcon />
         </button>
 
         <div class="overpanel-body">
-          <slot name="body">
-            default body
-          </slot>
+          <component :is="component"></component>
         </div>
 
         <div class="overpanel-footer">
           <slot name="footer">
             default footer
-            <button class="overpanel-default-button" @click="toggle">
+            <button class="overpanel-default-button" @click="closeOverpanel">
               OK
             </button>
           </slot>
@@ -34,19 +32,35 @@
 </template>
 
 <script>
-import { mapMutations } from 'vuex';
+import Vue from 'vue';
+import { mapState, mapMutations } from 'vuex';
 import CloseIcon from '~/static/close.svg';
 
 export default {
   components: {
     CloseIcon,
   },
+  computed: {
+    ...mapState('overpanel', ['overpanelVisible', 'overpanelComponent'])
+  },
+  data() {
+    return {
+      component: null,
+    };
+  },
   methods: {
     ...mapMutations({
-      toggle: 'overpanel/toggle',
-      close: 'overpanel/close',
-      open: 'overpanel/open',
+      closeOverpanel: 'overpanel/closeOverpanel',
     }),
+  },
+  watch: {
+    overpanelComponent(componentName) {
+      if (!componentName) return;
+
+      Vue.component(componentName, () => import(`./overpanel/${componentName}`));
+
+      this.component = componentName;
+    }
   },
 }
 </script>

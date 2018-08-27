@@ -1,15 +1,14 @@
 export const state = () => ({
-  open: true,
+  overpanelVisible: false,
+  overpanelComponent: null,
 });
 
 export const mutations = {
-  toggle (state) {
-    state.open = !state.open;
+  closeOverpanel (state) {
+    state.overpanelVisible = false;
   },
-  close (state) {
-    state.open = false;
-  },
-  open (state) {
-    state.open = true;
+  openOverpanel (state, componentName) {
+    state.overpanelVisible = true;
+    state.overpanelComponent = componentName;
   }
 };
