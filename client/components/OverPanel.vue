@@ -4,10 +4,14 @@
       <div class="overpanel-container">
 
         <div class="overpanel-header">
-          <slot name="header">
-            default header
-          </slot>
+          <span class="header-text">
+            <slot name="header">update</slot>
+          </span>
         </div>
+
+        <button class="close" @click="toggle">
+          <CloseIcon />
+        </button>
 
         <div class="overpanel-body">
           <slot name="body">
@@ -31,8 +35,12 @@
 
 <script>
 import { mapMutations } from 'vuex';
+import CloseIcon from '~/static/close.svg';
 
 export default {
+  components: {
+    CloseIcon,
+  },
   methods: {
     ...mapMutations({
       toggle: 'overpanel/toggle',
@@ -64,11 +72,75 @@ export default {
   bottom: 0;
   width: 60rem;
   background-color: #fff;
-  padding: 1rem;
+  padding: 4rem 2rem 4rem 6rem;
   transform-origin: right;
   transform: translateX(0);
   transition: transform .3s ease;
+}
 
+.overpanel-header {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 4rem;
+  background: linear-gradient(to top right, #35495e, #3a5774, #40658a, #4573a1, #4b81b9);
+}
+
+.header-text {
+  display: inline-block;
+  transform: rotate(180deg);
+  writing-mode: tb-rl;
+  color: #fff;
+  font-size: 2rem;
+  line-height: 2;
+  padding: 0 0 2rem 0;
+  width: 100%;
+  white-space: nowrap;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.close {
+  position: absolute;
+  display: block;
+  background: transparent;
+  border: none;
+  top: 1rem;
+  right: 1rem;
+  fill: #40658a;
+  cursor: pointer;
+  margin: 0;
+  padding: 0.5rem;
+  border-radius: 100%;
+  border: 1px solid transparent;
+  outline: 0;
+}
+
+.close::before {
+  content: 'close';
+  display: block;
+  position: absolute;
+  width: 3rem;
+  color: transparent;
+  margin-left: -3.5rem;
+  line-height: 1.6;
+}
+
+.close:hover::before,
+.close:active::before {
+  color: #40658a
+}
+
+.close:hover,
+.close:active {
+  fill: #4b81b9;
+  border-color: #4b81b9;
+}
+
+.close svg {
+  width: 1.5rem;
+  height: 1.3rem;
 }
 
 .overpanel-header h3 {
