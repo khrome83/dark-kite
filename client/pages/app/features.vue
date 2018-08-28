@@ -7,7 +7,11 @@
       <base-button @click.prevent.native="$store.commit('toggle')">Testing</base-button>
       <base-button to="https://insiderx.com" secondary>Testing</base-button>
       <button @click="openOverpanel('Default')">
-        Open
+        Open Default
+      </button>
+
+      <button @click="openOverpanel('Edit')">
+        Open Edit
       </button>
     </div>
   </div>
