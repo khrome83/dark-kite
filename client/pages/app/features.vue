@@ -18,15 +18,18 @@
 </template>
 
 <script>
+import { mapMutations } from 'vuex';
 import FeatureList from '~/components/FeatureList.vue';
 import BaseButton from '~/components/BaseButton.vue';
-import { mapMutations } from 'vuex';
 
 export default {
   layout: 'app',
   components: {
     FeatureList,
     BaseButton,
+  },
+  async fetch ({ store, params }) {
+    await store.dispatch('features/getFeatures');
   },
   methods: {
     ...mapMutations({
