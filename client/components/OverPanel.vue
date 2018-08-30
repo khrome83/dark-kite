@@ -1,6 +1,6 @@
 <template>
   <transition name="overpanel">
-    <div class="overpanel-mask" v-if="$store.state.overpanel.overpanelVisible" @click.once.self="closeOverpanel">
+    <div class="overpanel-mask" v-if="overpanelVisible" @click.once.self="closeOverpanel">
       <div class="overpanel-container" @keydown.esc="closeOverpanel">
 
         <div class="overpanel-header">
