@@ -8,11 +8,9 @@ export const state = () => ({
 export const mutations = {
   setFeatures (state, data) {
     state.features = data;
-    console.log(data);
   },
 
   setEditing (state, id) {
-    console.log(id);
     state.editing = id;
   }
 };
