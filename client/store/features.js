@@ -2,7 +2,7 @@ import axios from 'axios';
 
 export const state = () => ({
   features: [],
-  // editing: mull,
+  editing: null,
 });
 
 export const mutations = {
