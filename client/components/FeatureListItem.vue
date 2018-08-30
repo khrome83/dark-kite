@@ -10,7 +10,7 @@
         <span class="on" v-bind:class="{ active: isEnabled }">ON</span>
       </div>
     </div>
-    <a class="feature-edit" href="#" @click="setEditing(id)">Editing</a>
+    <a class="feature-edit" href="#" @click="edit(id)">Editing</a>
   </div>
 </template>
 
@@ -45,7 +45,12 @@ export default {
     toggle: function () {
       this.isEnabled = !this.isEnabled;
     },
+    edit: function (id) {
+      this.setEditing(id);
+      this.openOverpanel('EditFeature');
+    },
     ...mapMutations('features', ['setEditing']),
+    ...mapMutations('overpanel', ['openOverpanel']),
   }
 }
 </script>
