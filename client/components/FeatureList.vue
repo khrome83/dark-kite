@@ -1,23 +1,20 @@
 <template>
   <div class="list">
-    <feature-list-item v-for="feature in features" :key="feature.accessKey" v-bind="feature" />
+    <feature-list-item v-for="feature in features" :key="feature.id" v-bind="feature" />
   </div>
 </template>
 
 <script>
+import { mapState } from 'vuex';
 import FeatureListItem from '~/components/FeatureListItem.vue';
 
 export default {
   components: {
     FeatureListItem,
   },
-  data: () => ({
-    features: [
-      { name: 'Offline', accessKey: 'offline', enabled: true },
-      { name: 'Image Search', accessKey: 'imageSearch', enabled: false },
-      { name: 'Image Diff', accessKey: 'imageDiff', enabled: false },
-    ]
-  }),
+  computed: {
+    ...mapState('features', ['features'])
+  },
 }
 </script>
 
