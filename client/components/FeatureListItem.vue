@@ -1,21 +1,36 @@
 <template>
-  <div class="feature-toggle">
-    <div class="desc">
-      <div class="name">{{name}}</div>
-      <div class="key">({{accessKey}})</div>
+  <div class="feature-container">
+    <div class="feature-toggle">
+      <div class="desc">
+        <div class="label">{{label}}</div>
+        <div class="key">({{accessKey}})</div>
+      </div>
+      <div class="toggle" v-on:click="toggle">
+        <span class="off" v-bind:class="{ active: !isEnabled }">OFF</span>
+        <span class="on" v-bind:class="{ active: isEnabled }">ON</span>
+      </div>
     </div>
-    <div class="toggle" v-on:click="toggle">
-      <span class="off" v-bind:class="{ active: !isEnabled }">OFF</span>
-      <span class="on" v-bind:class="{ active: isEnabled }">ON</span>
-    </div>
+    <a class="feature-edit" href="#" @click="setEditing(id)">Editing</a>
   </div>
 </template>
 
 <script>
+import { mapMutations } from 'vuex';
+
 export default {
   props: {
-    name: String,
-    accessKey: String,
+    id: {
+      type: String,
+      required: true
+    },
+    label: {
+      type: String,
+      required: true,
+    },
+    accessKey: {
+      type: String,
+      required: true,
+    },
     enabled: {
       type: Boolean,
       default: false,
@@ -29,7 +44,8 @@ export default {
   methods: {
     toggle: function () {
       this.isEnabled = !this.isEnabled;
-    }
+    },
+    ...mapMutations('features', ['setEditing']),
   }
 }
 </script>
@@ -45,7 +61,7 @@ export default {
     justify-content: space-between;
   }
 
-  .name {
+  .label {
     font-size: 1.2rem;
     font-weight: 500;
   }
