@@ -2,19 +2,25 @@
   {
     "id": "9e7789f2-ffe4-4189-9c8b-01488300773b",
     "label": "Offline",
-    "key": "offline",
-    "active": true
+    "accessKey": "offline",
+    "enabled": true
   },
   {
     "id": "a826bf97-f424-4da6-b0b7-cb46a34ae45d",
     "label": "Image Search",
-    "key": "imageSearch",
-    "active": false
+    "accessKey": "imageSearch",
+    "enabled": false
   },
   {
     "id": "4d89be73-e9f8-4e4a-afcd-761f5c04494e",
     "label": "Image Diff",
-    "key": "imageDiff",
-    "active": true
+    "accessKey": "imageDiff",
+    "enabled": false
+  },
+  {
+    "id": "d864d7c0-613b-4ed6-9abf-7884a79eb90f",
+    "label": "Show Metrics",
+    "accessKey": "showMetrics",
+    "enabled": true
   }
 ]
