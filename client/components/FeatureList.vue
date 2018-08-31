@@ -1,6 +1,6 @@
 <template>
   <div class="list">
-    <feature-list-item v-for="feature in features" :key="feature.id" v-bind="feature" />
+    <feature-list-item v-for="feature in featureList" :key="feature" v-bind="features[feature]" />
   </div>
 </template>
 
@@ -13,7 +13,7 @@ export default {
     FeatureListItem,
   },
   computed: {
-    ...mapState('features', ['features'])
+    ...mapState('features', ['features', 'featureList'])
   },
 }
 </script>

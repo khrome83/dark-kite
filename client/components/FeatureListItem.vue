@@ -5,9 +5,9 @@
         <div class="label">{{label}}</div>
         <div class="key">({{accessKey}})</div>
       </div>
-      <div class="toggle" v-on:click="toggle">
-        <span class="off" v-bind:class="{ active: !isEnabled }">OFF</span>
-        <span class="on" v-bind:class="{ active: isEnabled }">ON</span>
+      <div class="toggle" v-on:click="toggleFeature(id)">
+        <span class="off" v-bind:class="{ active: !enabled }">OFF</span>
+        <span class="on" v-bind:class="{ active: enabled }">ON</span>
       </div>
     </div>
     <a class="feature-edit" href="#" @click="edit(id)">Editing</a>
@@ -36,20 +36,12 @@ export default {
       default: false,
     },
   },
-  data: function () {
-    return {
-      isEnabled: this.enabled,
-    };
-  },
   methods: {
-    toggle: function () {
-      this.isEnabled = !this.isEnabled;
-    },
     edit: function (id) {
       this.setEditing(id);
       this.openOverpanel('EditFeature');
     },
-    ...mapMutations('features', ['setEditing']),
+    ...mapMutations('features', ['setEditing', 'toggleFeature']),
     ...mapMutations('overpanel', ['openOverpanel']),
   }
 }

@@ -29,7 +29,7 @@ export default {
     BaseButton,
   },
   async fetch ({ store, params }) {
-    await store.dispatch('features/getFeatures');
+    await store.dispatch('features/fetchFeatures');
   },
   methods: {
     ...mapMutations({
