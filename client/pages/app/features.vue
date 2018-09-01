@@ -4,15 +4,17 @@
     <h2>Subheading</h2>
     <feature-list />
     <div>
-      <base-button @click.prevent.native="$store.commit('toggle')">Testing</base-button>
-      <base-button to="https://insiderx.com" secondary>Testing</base-button>
-      <button @click="openOverpanel('Default')">
+      <base-button @click="openOverpanel('Default')">
         Open Default
-      </button>
+      </base-button>
 
-      <button @click="openOverpanel('Edit')">
+      <base-button @click="openOverpanel('Edit')" secondary>
         Open Edit
-      </button>
+      </base-button>
+
+      <base-button @click="openOverpanel('Edit')" danger>
+        Danger
+      </base-button>
     </div>
   </div>
 </template>
