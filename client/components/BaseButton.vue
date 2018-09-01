@@ -1,5 +1,5 @@
 <template>
-  <component :is="element" v-bind="linkProps" class="button" :class="{secondary: secondary}">
+  <component :is="element" v-bind="linkProps" class="button" :class="{secondary: secondary, danger: danger}">
     <slot></slot>
   </component>
 </template>
@@ -15,6 +15,10 @@ export default {
       type: String,
     },
     secondary: {
+      type: Boolean,
+      default: false,
+    },
+    danger: {
       type: Boolean,
       default: false,
     },
@@ -103,5 +107,18 @@ export default {
 
   .button.secondary::before {
     background: linear-gradient(to right bottom, #35495e, #3a5774, #40658a, #4573a1, #4b81b9);
+  }
+
+  .button.danger,
+  .button.danger:hover,
+  .button.danger:active {
+    color: transparent;
+    background: linear-gradient(to right bottom, #922648, #a92851, #c12959, #d92a61, #f22b69);
+    -webkit-background-clip: text;
+    text-fill-color: transparent;
+  }
+
+  .button.danger::before {
+    background: linear-gradient(to right bottom, #922648, #a92851, #c12959, #d92a61, #f22b69);
   }
 </style>
