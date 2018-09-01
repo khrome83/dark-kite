@@ -1,10 +1,18 @@
 <template>
-  <component :is="element" v-bind="linkProps" class="button" :class="{secondary: secondary, danger: danger}">
+  <component
+    :is="element"
+    v-bind="linkProps.bindProps"
+    v-on="linkProps.onEvents"
+    class="button"
+    :class="{secondary: secondary, danger: danger}"
+  >
     <slot></slot>
   </component>
 </template>
 
 <script>
+import { mapMutations } from 'vuex';
+
 export default {
   props: {
     to: {
@@ -22,26 +30,59 @@ export default {
       type: Boolean,
       default: false,
     },
+    overPanel: {
+      type: String,
+      default: null,
+    }
   },
   computed: {
     element () {
-      return (/((https{0,1}|ftp|tel|mail):\/\/)|^www.|.{1}(com|net|org|io)/i.test(this.to)) ? 'a' : 'router-link';
+      if (/((https{0,1}|ftp|tel|mail):\/\/)|^www.|.{1}(com|net|org|io)/i.test(this.to)) {
+        return 'a';
+      }
+
+      if (this.overPanel) {
+        return 'button';
+      }
+
+      return 'router-link';
     },
     linkProps () {
       if (this.element === 'a') {
         return {
-          href: this.to,
-          target: '_blank',
-          rel: 'noopener',
-          title: this.title,
-        }
+          onEvents: {},
+          bindProps: {
+            href: this.to,
+            target: '_blank',
+            rel: 'noopener',
+            title: this.title,
+          },
+        };
+      }
+
+      if (this.overPanel) {
+        return {
+          onEvents: { click: () => {
+            this.openOverpanel(this.overPanel)
+            }
+          },
+          bindProps: {},
+        };
       }
 
       return {
-        to: this.to,
-        title: this.title,
-      }
+        onEvents: {},
+        bindProps: {
+          to: this.to,
+          title: this.title,
+        }
+      };
     }
+  },
+  methods: {
+    ...mapMutations({
+      openOverpanel: 'overpanel/openOverpanel',
+    }),
   },
 }
 </script>

@@ -4,15 +4,15 @@
     <h2>Subheading</h2>
     <feature-list />
     <div>
-      <base-button @click="openOverpanel('Default')">
+      <base-button over-panel="Default">
         Open Default
       </base-button>
 
-      <base-button @click="openOverpanel('Edit')" secondary>
+      <base-button over-panel="Edit" secondary>
         Open Edit
       </base-button>
 
-      <base-button @click="openOverpanel('Edit')" danger>
+      <base-button danger>
         Danger
       </base-button>
     </div>
