@@ -17,7 +17,9 @@ export const mutations = {
   },
 
   toggleFeature (state, id) {
-    state.features[id].enabled = !state.features[id].enabled;
+    if (!state.features[id].disabled) {
+      state.features[id].enabled = !state.features[id].enabled;
+    }
   }
 };
 
