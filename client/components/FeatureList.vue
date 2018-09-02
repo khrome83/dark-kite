@@ -20,9 +20,6 @@ export default {
 
 <style>
   .list {
-    border: 1px solid #eee;
-    border-radius: 0.5rem;
-    padding: 1rem;
     margin: 1rem 0;
     text-align: left;
     display: flex;
