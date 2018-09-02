@@ -103,6 +103,8 @@ export default {
     color: transparent;
     background: linear-gradient(to right bottom, #3b8070, #398e77, #399c7c, #3caa80, #41b883);
     -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
     text-fill-color: transparent;
     margin: 1rem;
   }
@@ -143,6 +145,9 @@ export default {
     color: transparent;
     background: linear-gradient(to right bottom, #35495e, #3a5774, #40658a, #4573a1, #4b81b9);
     -webkit-background-clip: text;
+    background-clip: text;
+    background-color: text;
+    -webkit-text-fill-color: transparent;
     text-fill-color: transparent;
   }
 
@@ -156,6 +161,8 @@ export default {
     color: transparent;
     background: linear-gradient(to right bottom, #922648, #a92851, #c12959, #d92a61, #f22b69);
     -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
     text-fill-color: transparent;
   }
 
