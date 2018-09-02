@@ -3,24 +3,28 @@
     "id": "9e7789f2-ffe4-4189-9c8b-01488300773b",
     "label": "Offline",
     "accessKey": "offline",
-    "enabled": true
+    "enabled": true,
+    "disabled": false
   },
   {
     "id": "a826bf97-f424-4da6-b0b7-cb46a34ae45d",
     "label": "Image Search",
     "accessKey": "imageSearch",
-    "enabled": false
+    "enabled": false,
+    "disabled": false
   },
   {
     "id": "4d89be73-e9f8-4e4a-afcd-761f5c04494e",
     "label": "Image Diff",
     "accessKey": "imageDiff",
-    "enabled": false
+    "enabled": false,
+    "disabled": true
   },
   {
     "id": "d864d7c0-613b-4ed6-9abf-7884a79eb90f",
     "label": "Show Metrics",
     "accessKey": "showMetrics",
-    "enabled": true
+    "enabled": true,
+    "disabled": false
   }
 ]
