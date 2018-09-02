@@ -1,6 +1,6 @@
 <template>
   <div class="feature-container">
-    <div class="feature-toggle">
+    <div class="feature-toggle" :class="{ disabled }">
       <div class="desc">
         <div class="label">{{label}}</div>
         <div class="key">({{accessKey}})</div>
@@ -32,6 +32,10 @@ export default {
       required: true,
     },
     enabled: {
+      type: Boolean,
+      default: false,
+    },
+    disabled: {
       type: Boolean,
       default: false,
     },
