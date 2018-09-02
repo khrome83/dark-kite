@@ -93,7 +93,7 @@ export default {
   .button:active {
     position: relative;
     border: 1px solid transparent;
-    border-radius: 4px;
+    border-radius: 0.25rem;
     background-color: transparent;
     padding: 0.8rem 2rem;
     display: inline-block;
@@ -118,7 +118,7 @@ export default {
     background: linear-gradient(to right bottom, #3b8070, #398e77, #399c7c, #3caa80, #41b883);
     content: '';
     z-index: -2;
-    border-radius: 4px;
+    border-radius: 0.25rem;
   }
 
   .button::after {
@@ -130,7 +130,7 @@ export default {
     background: #fff;
     content: '';
     z-index: -1;
-    border-radius: 4px;
+    border-radius: 0.25rem;
     border: 1px solid transparent;
     background-clip: padding-box;
   }
