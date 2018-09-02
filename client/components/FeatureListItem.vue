@@ -6,8 +6,13 @@
         <div class="key">({{accessKey}})</div>
       </div>
       <div class="toggle" v-on:click="toggleFeature(id)">
-        <span class="off" v-bind:class="{ active: !enabled }">OFF</span>
-        <span class="on" v-bind:class="{ active: enabled }">ON</span>
+        <template v-if="!disabled">
+          <span class="off-label" v-bind:class="{ active: !enabled }">OFF</span>
+          <span class="on-label" v-bind:class="{ active: enabled }">ON</span>
+        </template>
+        <template v-else>
+          <span class="disabled-label">DISABLED</span>
+        </template>
       </div>
     </div>
     <a class="feature-edit" href="#" @click="edit(id)">Editing</a>
@@ -51,15 +56,19 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
   .feature-toggle {
-    border: 1px solid #eee;
+    border: 1px solid #d6d5d5;
     border-radius: 0.5rem;
     padding: 1rem;
     margin: 1rem 0;
     text-align: left;
     display: flex;
     justify-content: space-between;
+  }
+
+  .disabled.feature-toggle {
+    border-color: #eee;
   }
 
   .label {
@@ -72,15 +81,26 @@ export default {
     font-weight: 300;
   }
 
+  .disabled .label,
+  .disabled .key {
+    color: #747474;
+  }
+
   .toggle {
     cursor: pointer;
-    background-color: #eee;
+    background-color: #d6d5d5;
     user-select: none;
     border-radius: 0.25rem;
   }
 
-  .on,
-  .off {
+  .disabled .toggle {
+    background-color: #eee;
+    cursor: default;
+  }
+
+  .on-label,
+  .off-label,
+  .disabled-label {
     font-size: 1.2rem;
     font-weight: 700;
     padding: 0.5rem 1rem;
@@ -92,17 +112,22 @@ export default {
     text-align: center;
   }
 
-  .on.active,
-  .off.active {
-    border-color: #eee;
+  .disabled-label {
+    color: #8d8d8d;
+    width: 9rem;
+  }
+
+  .on-label.active,
+  .off-label.active {
+    border-color: #d6d5d5;
     background-color: #fff;
   }
 
-  .on.active {
+  .on-label.active {
     color: #62b587;
   }
 
-  .off.active {
+  .off-label.active {
     color: #F44;
   }
 </style>
