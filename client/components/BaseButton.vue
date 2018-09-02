@@ -4,7 +4,7 @@
     v-bind="linkProps.bindProps"
     v-on="linkProps.onEvents"
     class="button"
-    :class="{secondary: secondary, danger: danger}"
+    :class="{ secondary, danger }"
   >
     <slot></slot>
   </component>
