@@ -69,19 +69,19 @@ export default {
       default: false,
     },
   },
-  data: function () {
+  data () {
     return {
       showMenu: false,
     };
   },
   methods: {
-    closeMenu: function () {
+    closeMenu () {
       this.showMenu = false;
     },
-    toggleMenu: function () {
+    toggleMenu () {
       this.showMenu = !this.showMenu;
     },
-    edit: function (id) {
+    edit (id) {
       this.setEditing(id);
       this.openOverpanel('EditFeature');
     },
