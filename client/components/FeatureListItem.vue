@@ -22,15 +22,15 @@
               <ConfigureMenuIcon />
             </div>
             <template v-if="!disabled">
-              <a class="toolbar-button toolbar-edit" href="#" @click="edit(id)">Edit Feature</a>
-              <a class="toolbar-button toolbar-schedule" href="#" @click="edit(id)">Manage Schedule</a>
-              <a class="toolbar-button toolbar-webhook" href="#" @click="edit(id)">Configure Webhook</a>
-              <a class="toolbar-button toolbar-activity" href="#" @click="edit(id)">View Activity</a>
+              <a class="toolbar-button toolbar-edit" href="#" @click="editFeature(id)">Edit Feature</a>
+              <a class="toolbar-button toolbar-schedule" href="#" @click="manageSchedule(id)">Manage Schedule</a>
+              <a class="toolbar-button toolbar-webhook" href="#" @click="configWebhook(id)">Configure Webhook</a>
+              <a class="toolbar-button toolbar-activity" href="#" @click="viewActivity(id)">View Activity</a>
               <a class="toolbar-button toolbar-disable" href="#" @click="toggleDisabled(id)">Disable Feature</a>
             </template>
             <template v-else>
               <a class="toolbar-button toolbar-reenable" href="#" @click="toggleDisabled(id)">Enable Feature</a>
-              <a class="toolbar-button toolbar-activity" href="#" @click="edit(id)">View Activity</a>
+              <a class="toolbar-button toolbar-activity" href="#" @click="viewActivity(id)">View Activity</a>
               <a class="toolbar-button toolbar-delete" href="#" @click="deleteFeature(id)">Delete Feature</a>
             </template>
           </div>
@@ -82,9 +82,21 @@ export default {
     toggleMenu () {
       this.showMenu = !this.showMenu;
     },
-    edit (id) {
+    editFeature (id) {
       this.setEditing(id);
-      this.openOverpanel('EditFeature');
+      this.openOverpanel('FeatureEdit');
+    },
+    viewActivity (id) {
+      this.setEditing(id);
+      this.openOverpanel('FeatureActivity');
+    },
+    manageSchedule (id) {
+      this.setEditing(id);
+      this.openOverpanel('FeatureSchedule');
+    },
+    configWebhook (id) {
+      this.setEditing(id);
+      this.openOverpanel('FeatureWebhook');
     },
     ...mapMutations('features', ['setEditing', 'toggleFeature', 'toggleDisabled', 'deleteFeature']),
     ...mapMutations('overpanel', ['openOverpanel']),
