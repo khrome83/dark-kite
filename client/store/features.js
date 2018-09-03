@@ -33,6 +33,10 @@ export const mutations = {
   updateAccessKey (state, { id, value }) {
     state.features[id].accessKey = value;
   },
+
+  deleteFeature (state, id) {
+    state.featureList = state.featureList.filter(e => e !== id);
+  },
 };
 
 export const actions = {
