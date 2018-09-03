@@ -49,9 +49,7 @@ export default {
     };
   },
   methods: {
-    ...mapMutations({
-      closeOverpanel: 'overpanel/closeOverpanel',
-    }),
+    ...mapMutations('overpanel', ['closeOverpanel']),
   },
   watch: {
     overpanelComponent(componentName) {
