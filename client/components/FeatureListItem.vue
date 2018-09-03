@@ -26,11 +26,12 @@
               <a class="toolbar-button toolbar-schedule" href="#" @click="edit(id)">Manage Schedule</a>
               <a class="toolbar-button toolbar-webhook" href="#" @click="edit(id)">Configure Webhook</a>
               <a class="toolbar-button toolbar-activity" href="#" @click="edit(id)">View Activity</a>
+              <a class="toolbar-button toolbar-disable" href="#" @click="toggleDisabled(id)">Disable Feature</a>
             </template>
             <template v-else>
-              <a class="toolbar-button toolbar-reenable" href="#" @click="edit(id)">Enable Feature</a>
-              <a class="toolbar-button toolbar-delete" href="#" @click="edit(id)">Delete Feature</a>
+              <a class="toolbar-button toolbar-reenable" href="#" @click="toggleDisabled(id)">Enable Feature</a>
               <a class="toolbar-button toolbar-activity" href="#" @click="edit(id)">View Activity</a>
+              <a class="toolbar-button toolbar-delete" href="#" @click="deleteFeature(id)">Delete Feature</a>
             </template>
           </div>
         </div>
@@ -85,7 +86,7 @@ export default {
       this.setEditing(id);
       this.openOverpanel('EditFeature');
     },
-    ...mapMutations('features', ['setEditing', 'toggleFeature']),
+    ...mapMutations('features', ['setEditing', 'toggleFeature', 'toggleDisabled', 'deleteFeature']),
     ...mapMutations('overpanel', ['openOverpanel']),
   }
 }
