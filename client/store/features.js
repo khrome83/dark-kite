@@ -20,7 +20,19 @@ export const mutations = {
     if (!state.features[id].disabled) {
       state.features[id].enabled = !state.features[id].enabled;
     }
-  }
+  },
+
+  toggleDisabled (state, id) {
+    state.features[id].disabled = !state.features[id].disabled;
+  },
+
+  updateLabel (state, { id, value }) {
+    state.features[id].label = value;
+  },
+
+  updateAccessKey (state, { id, value }) {
+    state.features[id].accessKey = value;
+  },
 };
 
 export const actions = {
