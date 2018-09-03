@@ -17,7 +17,7 @@
 import { mapState, mapMutations } from 'vuex';
 
 export default {
-  name: 'EditFeature',
+  name: 'FeatureEdit',
   computed: {
     ...mapState('features', ['features', 'editing']),
     label: {
