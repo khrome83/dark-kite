@@ -34,6 +34,11 @@ export const mutations = {
     state.features[id].accessKey = value;
   },
 
+  updateFeature (state, { id, label, accessKey }) {
+    state.features[id].label = label;
+    state.features[id].accessKey = accessKey;
+  },
+
   deleteFeature (state, id) {
     state.featureList = state.featureList.filter(e => e !== id);
   },
