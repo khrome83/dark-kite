@@ -121,5 +121,34 @@ h4 {
   font-size: 1rem;
   color: #526488;
 }
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  display: block;
+  color: #000;
+  padding: 0.5rem 0;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+input {
+  border: 1px solid #d6d5d5;
+  border-radius: 0.25rem;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  display: block;
+  width: 100%;
+}
+
+fieldset {
+  border-width: 0;
+  margin: 0;
+  padding: 0;
+}
 </style>
 
