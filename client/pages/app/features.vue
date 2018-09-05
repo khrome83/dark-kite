@@ -3,17 +3,9 @@
     <h1>Features</h1>
     <h2>Subheading</h2>
     <feature-list />
-    <div>
-      <base-button over-panel="Default">
-        Open Default
-      </base-button>
-
-      <base-button over-panel="Edit" secondary>
-        Open Edit
-      </base-button>
-
-      <base-button danger>
-        Danger
+    <div class="toolbar">
+      <base-button over-panel="FeatureCreate">
+        Add Feature
       </base-button>
     </div>
   </div>
@@ -44,6 +36,11 @@ export default {
 <style>
 .links {
   padding-top: 15px;
+}
+
+.toolbar {
+  display: flex;
+  flex-direction: row-reverse;
 }
 </style>
 
