@@ -38,7 +38,7 @@
     <the-app-section>
       <nuxt/>
     </the-app-section>
-    <over-panel />
+    <the-over-panel />
   </div>
 </template>
 
@@ -47,7 +47,7 @@ import TheSidebar from '~/components/TheSidebar';
 import TheSidebarLink from '~/components/TheSidebarLink';
 import TheSidebarLogo from '~/components/TheSidebarLogo';
 import TheAppSection from '~/components/TheAppSection';
-import OverPanel from '~/components/OverPanel';
+import TheOverPanel from '~/components/TheOverPanel';
 import BillingIcon from '~/static/billing.svg';
 import ConfigurationIcon from '~/static/configuration.svg';
 import FeatureIcon from '~/static/feature.svg';
@@ -62,7 +62,7 @@ export default {
     TheSidebarLink,
     TheSidebarLogo,
     TheAppSection,
-    OverPanel,
+    TheOverPanel,
     BillingIcon,
     ConfigurationIcon,
     FeatureIcon,
