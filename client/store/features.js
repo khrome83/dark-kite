@@ -1,3 +1,4 @@
+import Vue from 'vue';
 import axios from 'axios';
 
 export const state = () => ({
@@ -37,6 +38,19 @@ export const mutations = {
   updateFeature (state, { id, label, accessKey }) {
     state.features[id].label = label;
     state.features[id].accessKey = accessKey;
+  },
+
+  createFeature (state, { id, label, accessKey }) {
+    const newFeature = {
+      id,
+      label,
+      accessKey,
+      enabled: true,
+      disabled: false,
+    };
+
+    state.featureList = [...state.featureList, id];
+    Vue.set(state.features, id, newFeature);
   },
 
   deleteFeature (state, id) {
