@@ -12,20 +12,15 @@
         <button class="close" @click="closeOverpanel">
           <CloseIcon />
         </button>
+        <div class="overpanel-content">
+          <div class="overpanel-body">
+            <component :is="component"></component>
+          </div>
 
-        <div class="overpanel-body">
-          <component :is="component"></component>
+          <div class="overpanel-footer">
+            <a class="close-link" @click.native="closeOverpanel">Close</a>
+          </div>
         </div>
-
-        <div class="overpanel-footer">
-          <slot name="footer">
-            default footer
-            <button class="overpanel-default-button" @click="closeOverpanel">
-              OK
-            </button>
-          </slot>
-        </div>
-
       </div>
     </div>
   </transition>
@@ -164,8 +159,11 @@ export default {
   margin: 20px 0;
 }
 
-.overpanel-default-button {
-  float: right;
+.overpanel-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100%;
 }
 
 .overpanel-enter,
