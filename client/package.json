@@ -21,7 +21,8 @@
   "dependencies": {
     "axios": "0.18.0",
     "css.escape": "1.5.1",
-    "nuxt": "^1.0.0"
+    "nuxt": "^1.0.0",
+    "uuid": "3.3.2"
   },
   "devDependencies": {
     "babel-eslint": "^8.2.1",
