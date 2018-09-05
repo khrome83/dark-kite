@@ -45,7 +45,7 @@ export const mutations = {
       id,
       label,
       accessKey,
-      enabled: true,
+      enabled: false,
       disabled: false,
     };
 
