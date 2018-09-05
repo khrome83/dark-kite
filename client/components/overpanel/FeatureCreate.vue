@@ -7,7 +7,7 @@
       </div>
       <div>
         <label for="accessKey">Access Key</label>
-        <input type="text" name="accessKey" id="accessKey" pattern="^[a-z]{1}[A-Za-z0-9]{1,}$" v-model="accessKey" required>
+        <input type="text" name="accessKey" id="accessKey" pattern="^[a-z]{1}[A-Za-z0-9]{1,}$" v-model="accessKey" required disabled>
       </div>
     </fieldset>
     <div class="form-control">
@@ -30,8 +30,13 @@ export default {
   data () {
     return {
       label: null,
-      accessKey: null,
     };
+  },
+  computed: {
+    accessKey () {
+      const toCamelCase = (str) => str.replace(/(?:^\w|[A-Z]|\b\w)/g, (ltr, idx) => idx === 0 ? ltr.toLowerCase() : ltr.toUpperCase()).replace(/[\W_\s]+/g, '');
+      return this.label ? toCamelCase(this.label) : null;
+    },
   },
   methods: {
     ...mapMutations('features', ['createFeature']),
