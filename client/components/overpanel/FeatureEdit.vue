@@ -11,8 +11,8 @@
       </div>
     </fieldset>
     <div class="form-control">
-      <base-button @click="closeOverpanel" danger>Cancel</base-button>
-      <base-button @click="submitForm">Update</base-button>
+      <base-button @click.native="closeOverpanel" danger>Cancel</base-button>
+      <base-button @click.native="submitForm">Update</base-button>
     </div>
   </form>
 </template>
