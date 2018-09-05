@@ -106,7 +106,6 @@ export default {
     background-clip: text;
     -webkit-text-fill-color: transparent;
     text-fill-color: transparent;
-    margin: 1rem;
   }
 
   .button::before {
