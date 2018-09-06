@@ -21,6 +21,7 @@
 import { mapMutations } from 'vuex';
 import uuidv4 from 'uuid/v4';
 import BaseButton from '~/components/BaseButton';
+import { toCamelCase } from '~/utils/case';
 
 export default {
   name: 'FeatureCreate',
@@ -34,7 +35,6 @@ export default {
   },
   computed: {
     accessKey () {
-      const toCamelCase = (str) => str.replace(/(?:^\w|[A-Z]|\b\w)/g, (ltr, idx) => idx === 0 ? ltr.toLowerCase() : ltr.toUpperCase()).replace(/[\W_\s]+/g, '');
       return this.label ? toCamelCase(this.label) : null;
     },
   },
