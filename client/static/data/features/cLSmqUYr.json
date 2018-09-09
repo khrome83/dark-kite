@@ -1,29 +1,29 @@
 [
   {
-    "id": "9e7789f2-ffe4-4189-9c8b-01488300773b",
-    "label": "Offline",
-    "accessKey": "offline",
+    "id": "9b642a4f-89fe-47e3-8599-b8f7e18e6289",
+    "label": "Offline Mode",
+    "accessKey": "offline Mode",
     "enabled": true,
     "disabled": false
   },
   {
-    "id": "a826bf97-f424-4da6-b0b7-cb46a34ae45d",
-    "label": "Image Search",
-    "accessKey": "imageSearch",
+    "id": "b7ed6530-3a2c-4d03-8a29-636c06845198",
+    "label": "Feature Search",
+    "accessKey": "featureSearch",
     "enabled": false,
     "disabled": false
   },
   {
-    "id": "4d89be73-e9f8-4e4a-afcd-761f5c04494e",
-    "label": "Image Diff",
-    "accessKey": "imageDiff",
+    "id": "4ee453c1-1e41-4202-baa0-9edeeda78a84",
+    "label": "Search Filter",
+    "accessKey": "searchFilter",
     "enabled": false,
     "disabled": true
   },
   {
-    "id": "d864d7c0-613b-4ed6-9abf-7884a79eb90f",
-    "label": "Show Metrics",
-    "accessKey": "showMetrics",
+    "id": "a388f872-8a30-4111-a07b-9fde132feffb",
+    "label": "Popular Searches",
+    "accessKey": "popularSearches",
     "enabled": true,
     "disabled": false
   }

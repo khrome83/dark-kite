@@ -1,30 +1,51 @@
 [
   {
-    "id": "9e7789f2-ffe4-4189-9c8b-01488300773b",
-    "label": "Offline",
-    "accessKey": "offline",
+    "id": "12ff0df4-c50f-42e1-b670-19eb18a7f18a",
+    "label": "Zane",
+    "accessKey": "zane",
     "enabled": true,
     "disabled": false
   },
   {
-    "id": "a826bf97-f424-4da6-b0b7-cb46a34ae45d",
-    "label": "Image Search",
-    "accessKey": "imageSearch",
+    "id": "0fb37691-9265-4038-8631-6a5bc3c2a10d",
+    "label": "Jaki",
+    "accessKey": "jaki",
     "enabled": false,
     "disabled": false
   },
   {
-    "id": "4d89be73-e9f8-4e4a-afcd-761f5c04494e",
-    "label": "Image Diff",
-    "accessKey": "imageDiff",
+    "id": "c90552b4-cdae-4a6b-88c0-113e43d8ee66",
+    "label": "Masison",
+    "accessKey": "madison",
+    "enabled": false,
+    "disabled": false
+  },
+  {
+    "id": "4ea532e9-d051-45e2-a196-4b015e1be95b",
+    "label": "Cookie",
+    "accessKey": "cookie",
+    "enabled": true,
+    "disabled": false
+  },
+  {
+    "id": "bc548291-a15f-4517-881a-39541d551f38",
+    "label": "Atari",
+    "accessKey": "atari",
+    "enabled": false,
+    "disabled": false
+  },
+  {
+    "id": "d3e44477-1ccd-491c-b9a6-b18254c4f747",
+    "label": "Adama",
+    "accessKey": "adama",
+    "enabled": true,
+    "disabled": false
+  },
+  {
+    "id": "3264e8aa-f923-4b1c-83a9-85fc217faee7",
+    "label": "Buddy",
+    "accessKey": "buddy",
     "enabled": false,
     "disabled": true
-  },
-  {
-    "id": "d864d7c0-613b-4ed6-9abf-7884a79eb90f",
-    "label": "Show Metrics",
-    "accessKey": "showMetrics",
-    "enabled": true,
-    "disabled": false
   }
 ]

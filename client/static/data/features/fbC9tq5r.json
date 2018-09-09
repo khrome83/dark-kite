@@ -1,29 +1,29 @@
 [
   {
-    "id": "9e7789f2-ffe4-4189-9c8b-01488300773b",
-    "label": "Offline",
-    "accessKey": "offline",
+    "id": "96cbe727-f3c5-4b5a-b9ef-e954411787a2",
+    "label": "Hearthbeat",
+    "accessKey": "heartbeat",
     "enabled": true,
     "disabled": false
   },
   {
-    "id": "a826bf97-f424-4da6-b0b7-cb46a34ae45d",
-    "label": "Image Search",
-    "accessKey": "imageSearch",
+    "id": "8681ac12-b1a3-44fb-b1dd-0877d3727bd1",
+    "label": "Pulse",
+    "accessKey": "pulse",
     "enabled": false,
     "disabled": false
   },
   {
-    "id": "4d89be73-e9f8-4e4a-afcd-761f5c04494e",
-    "label": "Image Diff",
-    "accessKey": "imageDiff",
+    "id": "d57038bc-e3af-418d-93a6-276df9f13e79",
+    "label": "Sound FX",
+    "accessKey": "soundFx",
     "enabled": false,
     "disabled": true
   },
   {
-    "id": "d864d7c0-613b-4ed6-9abf-7884a79eb90f",
-    "label": "Show Metrics",
-    "accessKey": "showMetrics",
+    "id": "a81f4311-545d-49b3-9813-42c8c78b358e",
+    "label": "Sound Board",
+    "accessKey": "soundBoard",
     "enabled": true,
     "disabled": false
   }
