@@ -9,22 +9,22 @@
   {
     "id": "2fdc2167-7a42-4859-838d-fbf67e70d3a8",
     "identifer": "fbC9tq5r",
-    "label": "First Project",
-    "description": "Example First Project",
+    "label": "Second Project",
+    "description": "Example Second Project",
     "keyFormat": "toCamelCase"
   },
   {
     "id": "2fdc2167-7a42-4859-838d-fbf67e70d3a8",
     "identifer": "cLSmqUYr",
-    "label": "First Project",
-    "description": "Example First Project",
+    "label": "Third Project",
+    "description": "Example Third Project",
     "keyFormat": "toCamelCase"
   },
   {
     "id": "2fdc2167-7a42-4859-838d-fbf67e70d3a8",
     "identifer": "rgDcecVn",
-    "label": "First Project",
-    "description": "Example First Project",
+    "label": "Fourth Project",
+    "description": "Example Fourth Project",
     "keyFormat": "toCamelCase"
   }
 ]
