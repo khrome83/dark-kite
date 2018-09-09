@@ -4,27 +4,31 @@
     "identifer": "zNC7nRvt",
     "label": "First Project",
     "description": "Example First Project",
-    "keyFormat": "toCamelCase"
+    "keyFormat": "toCamelCase",
+    "disabled": false
   },
   {
     "id": "2fdc2167-7a42-4859-838d-fbf67e70d3a8",
     "identifer": "fbC9tq5r",
     "label": "Second Project",
     "description": "Example Second Project",
-    "keyFormat": "toCamelCase"
+    "keyFormat": "toCamelCase",
+    "disabled": false
   },
   {
     "id": "2fdc2167-7a42-4859-838d-fbf67e70d3a8",
     "identifer": "cLSmqUYr",
     "label": "Third Project",
     "description": "Example Third Project",
-    "keyFormat": "toCamelCase"
+    "keyFormat": "toCamelCase",
+    "disabled": false
   },
   {
     "id": "2fdc2167-7a42-4859-838d-fbf67e70d3a8",
     "identifer": "rgDcecVn",
     "label": "Fourth Project",
     "description": "Example Fourth Project",
-    "keyFormat": "toCamelCase"
+    "keyFormat": "toCamelCase",
+    "disabled": false
   }
 ]
