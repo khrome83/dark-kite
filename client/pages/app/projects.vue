@@ -16,7 +16,10 @@ export default {
   layout: 'app',
   components: {
     BaseButton,
-  }
+  },
+  async fetch ({ store, params }) {
+    await store.dispatch('projects/fetchProjects');
+  },
 }
 </script>
 
