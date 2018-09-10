@@ -17,6 +17,12 @@ export const mutations = {
     state.selected = id;
   },
 
+  setSelectedIfEmpty(state, id) {
+    if (state.selected === null || state.projects[id] === undefined) {
+      state.selected = id;
+    }
+  },
+
   toggleDisabled (state, id) {
     state.projects[id].disabled = !state.projects[id].disabled;
   },
@@ -65,6 +71,12 @@ export const actions = {
       projectList.push(project.id);
     });
 
+    const id = projectsList[0];
+
+    // Set Project Definitions
     commit('setPorjects', { projects, projectList });
+
+    // Make first project selected
+    commit('setSelectedIfEmpty', id);
   },
 }
