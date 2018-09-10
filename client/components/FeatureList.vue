@@ -18,7 +18,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
   .list {
     margin: 1rem 0;
     text-align: left;
