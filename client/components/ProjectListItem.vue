@@ -9,11 +9,11 @@
         <template slot="active">
           <a href="#">Edit Project</a>
           <a href="#">Manage Users</a>
-          <a href="#">Disable Project</a>
+          <a href="#" @click="toggleDisabled(id)">Disable Project</a>
         </template>
         <template slot="disabled">
-          <a href="#">Enable Project</a>
-          <a href="#">Delete Project</a>
+          <a href="#" @click="toggleDisabled(id)">Enable Project</a>
+          <a href="#" @click="deleteProject(id)">Delete Project</a>
         </template>
       </toolbar-menu>
     </div>
@@ -49,7 +49,11 @@ export default {
       type: Boolean,
       default: false,
     },
-  }
+  },
+  methods: {
+    ...mapMutations('projects', ['setSelected', 'toggleDisabled', 'deleteFeature']),
+    ...mapMutations('overpanel', ['openOverpanel']),
+  },
 }
 </script>
 
