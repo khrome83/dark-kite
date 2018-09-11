@@ -103,8 +103,9 @@ export default {
   }
 
   .project-selected {
-    font-weight: 300;
+    font-weight: 500;
     font-size: 1rem;
     padding: 0.5rem 1rem;
+    color: #62b587;
   }
 </style>
