@@ -8,7 +8,7 @@
     "disabled": false
   },
   {
-    "id": "2fdc2167-7a42-4859-838d-fbf67e70d3a8",
+    "id": "ce404f3b-a0d6-4303-8a04-92a1d712a216",
     "identifer": "fbC9tq5r",
     "label": "Second Project",
     "description": "Example Second Project",
@@ -16,7 +16,7 @@
     "disabled": false
   },
   {
-    "id": "2fdc2167-7a42-4859-838d-fbf67e70d3a8",
+    "id": "59c7a615-1ca8-484f-a15d-6e5cfdf8c3c6",
     "identifer": "cLSmqUYr",
     "label": "Third Project",
     "description": "Example Third Project",
@@ -24,11 +24,11 @@
     "disabled": false
   },
   {
-    "id": "2fdc2167-7a42-4859-838d-fbf67e70d3a8",
+    "id": "4c675b85-3cbe-46e9-88db-a739efffd3e2",
     "identifer": "rgDcecVn",
     "label": "Fourth Project",
     "description": "Example Fourth Project",
     "keyFormat": "toCamelCase",
-    "disabled": false
+    "disabled": true
   }
 ]
