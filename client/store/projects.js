@@ -78,5 +78,7 @@ export const actions = {
 
     // Make first project selected
     commit('setSelectedIfEmpty', id);
+
+    return projects[id].identifier;
   },
 }
