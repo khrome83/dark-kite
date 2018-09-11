@@ -14,37 +14,31 @@
           <span class="disabled-label">DISABLED</span>
         </template>
       </div>
-      <div class="toolbar-menu" :class="{ showMenu }" @click="toggleMenu" @mouseleave="closeMenu">
-        <ConfigureMenuIcon />
-        <div class="toolbar-menu-popup" v-if="showMenu">
-          <div class="toolbar-close-icon">
-            <ConfigureMenuIcon />
-          </div>
-          <template v-if="!disabled">
-            <a class="toolbar-button toolbar-edit" href="#" @click="editFeature(id)">Edit Feature</a>
-            <a class="toolbar-button toolbar-schedule" href="#" @click="manageSchedule(id)">Manage Schedule</a>
-            <a class="toolbar-button toolbar-webhook" href="#" @click="configWebhook(id)">Configure Webhook</a>
-            <a class="toolbar-button toolbar-activity" href="#" @click="viewActivity(id)">View Activity</a>
-            <a class="toolbar-button toolbar-disable" href="#" @click="toggleDisabled(id)">Disable Feature</a>
-          </template>
-          <template v-else>
-            <a class="toolbar-button toolbar-reenable" href="#" @click="toggleDisabled(id)">Enable Feature</a>
-            <a class="toolbar-button toolbar-activity" href="#" @click="viewActivity(id)">View Activity</a>
-            <a class="toolbar-button toolbar-delete" href="#" @click="deleteFeature(id)">Delete Feature</a>
-          </template>
-        </div>
-      </div>
+      <toolbar-menu :disabled="disabled">
+        <template slot="active">
+          <a href="#" @click="editFeature(id)">Edit Feature</a>
+          <a href="#" @click="manageSchedule(id)">Manage Schedule</a>
+          <a href="#" @click="configWebhook(id)">Configure Webhook</a>
+          <a href="#" @click="viewActivity(id)">View Activity</a>
+          <a href="#" @click="toggleDisabled(id)">Disable Feature</a>
+        </template>
+        <template slot="disabled">
+          <a href="#" @click="toggleDisabled(id)">Enable Feature</a>
+          <a href="#" @click="viewActivity(id)">View Activity</a>
+          <a href="#" @click="deleteFeature(id)">Delete Feature</a>
+        </template>
+      </toolbar-menu>
     </div>
   </div>
 </template>
 
 <script>
 import { mapMutations } from 'vuex';
-import ConfigureMenuIcon from '~/static/configure-menu.svg';
+import ToolbarMenu from '~/components/ToolbarMenu';
 
 export default {
   components: {
-    ConfigureMenuIcon,
+    ToolbarMenu,
   },
   props: {
     id: {
@@ -68,18 +62,7 @@ export default {
       default: false,
     },
   },
-  data () {
-    return {
-      showMenu: false,
-    };
-  },
   methods: {
-    closeMenu () {
-      this.showMenu = false;
-    },
-    toggleMenu () {
-      this.showMenu = !this.showMenu;
-    },
     editFeature (id) {
       this.setEditing(id);
       this.openOverpanel('FeatureEdit');
@@ -184,71 +167,4 @@ export default {
     justify-content: space-between;
     align-content: center;
   }
-
-  .toolbar-menu {
-    cursor: pointer;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-content: center;
-    fill: #8d8d8d;
-    position: relative;
-  }
-
-  .toolbar-menu svg {
-    height: 1rem;
-    width: 1rem;
-    transform: scale(2);
-    align-self: center;
-  }
-
-  .toolbar-menu:hover svg,
-  .toolbar-menu:active svg {
-    transform: scale(2.25);
-    fill: #000;
-  }
-
-  .toolbar-menu.showMenu svg {
-    fill: #fff;
-  }
-
-  .toolbar-menu-popup {
-    position: absolute;
-    top: -0.5rem;
-    right: -0.5rem;
-    width: 20rem;
-    border: 1px solid #d6d5d5;
-    border-radius: 0.25rem;
-    background-image: linear-gradient(to left top, rgba(60, 60, 60, .9), rgba(46, 46, 46, 0.9), rgba(33, 33, 33, .9), rgba(20, 20, 20, .9), rgba(0, 0, 0, .9));
-    cursor: default;
-    z-index: 1;
-  }
-
-  .toolbar-close-icon {
-    position: absolute;
-    top: 1.25rem;
-    right: 0.45rem;
-    width: 1rem;
-    height: 1rem;
-    cursor: pointer;
-    z-index: 2;
-  }
-
-  .toolbar-button {
-    color: #fff;
-    text-decoration: none;
-    padding: 1rem;
-    display: block;
-    opacity: 0.75;
-    line-height: 1.2;
-    font-size: 1.2rem;
-    user-select: none;
-  }
-
-  .toolbar-button:hover,
-  .toolbar-button:active {
-    opacity: 1;
-    background-color: rgba(0, 0, 0, 0.7);
-  }
-
 </style>
