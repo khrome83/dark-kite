@@ -2,6 +2,7 @@
   <div>
     <h1>Projects</h1>
     <h2>Subheading</h2>
+    <project-list />
     <div>
       <base-button target="_blank" alt>Testing</base-button>
       <base-button href="https://insiderx.com" target="_blank" secondary>Testing</base-button>
@@ -11,11 +12,13 @@
 
 <script>
 import BaseButton from '~/components/BaseButton.vue';
+import ProjectList from '~/components/ProjectList.vue';
 
 export default {
   layout: 'app',
   components: {
     BaseButton,
+    ProjectList,
   },
   async fetch ({ store, params }) {
     await store.dispatch('projects/fetchProjects');
