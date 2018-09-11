@@ -1,39 +1,37 @@
 <template>
-  <div class="feature-container">
-    <div class="feature-toggle" :class="{ disabled }">
-      <div class="desc">
-        <div class="label">{{label}}</div>
-        <div class="key">({{accessKey}})</div>
+  <div class="feature-container" :class="{ disabled }">
+    <div class="desc">
+      <div class="label">{{label}}</div>
+      <div class="key">({{accessKey}})</div>
+    </div>
+    <div class="feature-controls">
+      <div class="toggle" v-on:click="toggleFeature(id)">
+        <template v-if="!disabled">
+          <span class="off-label" v-bind:class="{ active: !enabled }">OFF</span>
+          <span class="on-label" v-bind:class="{ active: enabled }">ON</span>
+        </template>
+        <template v-else>
+          <span class="disabled-label">DISABLED</span>
+        </template>
       </div>
-      <div class="feature-controls">
-        <div class="toggle" v-on:click="toggleFeature(id)">
+      <div class="toolbar-menu" :class="{ showMenu }" @click="toggleMenu" @mouseleave="closeMenu">
+        <ConfigureMenuIcon />
+        <div class="toolbar-menu-popup" v-if="showMenu">
+          <div class="toolbar-close-icon">
+            <ConfigureMenuIcon />
+          </div>
           <template v-if="!disabled">
-            <span class="off-label" v-bind:class="{ active: !enabled }">OFF</span>
-            <span class="on-label" v-bind:class="{ active: enabled }">ON</span>
+            <a class="toolbar-button toolbar-edit" href="#" @click="editFeature(id)">Edit Feature</a>
+            <a class="toolbar-button toolbar-schedule" href="#" @click="manageSchedule(id)">Manage Schedule</a>
+            <a class="toolbar-button toolbar-webhook" href="#" @click="configWebhook(id)">Configure Webhook</a>
+            <a class="toolbar-button toolbar-activity" href="#" @click="viewActivity(id)">View Activity</a>
+            <a class="toolbar-button toolbar-disable" href="#" @click="toggleDisabled(id)">Disable Feature</a>
           </template>
           <template v-else>
-            <span class="disabled-label">DISABLED</span>
+            <a class="toolbar-button toolbar-reenable" href="#" @click="toggleDisabled(id)">Enable Feature</a>
+            <a class="toolbar-button toolbar-activity" href="#" @click="viewActivity(id)">View Activity</a>
+            <a class="toolbar-button toolbar-delete" href="#" @click="deleteFeature(id)">Delete Feature</a>
           </template>
-        </div>
-        <div class="toolbar-menu" :class="{ showMenu }" @click="toggleMenu" @mouseleave="closeMenu">
-          <ConfigureMenuIcon />
-          <div class="toolbar-menu-popup" v-if="showMenu">
-            <div class="toolbar-close-icon">
-              <ConfigureMenuIcon />
-            </div>
-            <template v-if="!disabled">
-              <a class="toolbar-button toolbar-edit" href="#" @click="editFeature(id)">Edit Feature</a>
-              <a class="toolbar-button toolbar-schedule" href="#" @click="manageSchedule(id)">Manage Schedule</a>
-              <a class="toolbar-button toolbar-webhook" href="#" @click="configWebhook(id)">Configure Webhook</a>
-              <a class="toolbar-button toolbar-activity" href="#" @click="viewActivity(id)">View Activity</a>
-              <a class="toolbar-button toolbar-disable" href="#" @click="toggleDisabled(id)">Disable Feature</a>
-            </template>
-            <template v-else>
-              <a class="toolbar-button toolbar-reenable" href="#" @click="toggleDisabled(id)">Enable Feature</a>
-              <a class="toolbar-button toolbar-activity" href="#" @click="viewActivity(id)">View Activity</a>
-              <a class="toolbar-button toolbar-delete" href="#" @click="deleteFeature(id)">Delete Feature</a>
-            </template>
-          </div>
         </div>
       </div>
     </div>
@@ -105,7 +103,7 @@ export default {
 </script>
 
 <style scoped>
-  .feature-toggle {
+  .feature-container {
     border: 1px solid #d6d5d5;
     border-radius: 0.25rem;
     padding: 1rem;
@@ -115,7 +113,7 @@ export default {
     justify-content: space-between;
   }
 
-  .disabled.feature-toggle {
+  .disabled.feature-container {
     border-color: #eee;
   }
 
