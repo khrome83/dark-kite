@@ -56,9 +56,12 @@ export default {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-content: center;
+    align-content: right;
     fill: #8d8d8d;
     position: relative;
+    width: 2rem;
+    padding-left: 1rem;
+    height: 2.5rem;
   }
 
   .toolbar-menu svg {
@@ -80,7 +83,7 @@ export default {
 
   .toolbar-menu-popup {
     position: absolute;
-    top: -0.5rem;
+    top: -0.6rem;
     right: -0.5rem;
     width: 20rem;
     border: 1px solid #d6d5d5;
