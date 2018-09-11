@@ -5,8 +5,12 @@
       <div class="identifier">({{identifier}})</div>
     </div>
     <div class="project-controls">
+      <div class="project-selected" v-if="selected === id">Selected</div>
       <toolbar-menu :disabled="disabled">
         <template slot="active">
+          <template v-if="selected !== id">
+            <a href="#" @click="setSelected(id)">Select Project</a>
+          </template>
           <a href="#">Edit Project</a>
           <a href="#">Manage Users</a>
           <a href="#" @click="toggleDisabled(id)">Disable Project</a>
@@ -21,7 +25,7 @@
 </template>
 
 <script>
-import { mapMutations } from 'vuex';
+import { mapState, mapMutations } from 'vuex';
 import ToolbarMenu from '~/components/ToolbarMenu';
 
 export default {
@@ -50,8 +54,11 @@ export default {
       default: false,
     },
   },
+  computed: {
+    ...mapState('projects', ['selected']),
+  },
   methods: {
-    ...mapMutations('projects', ['setSelected', 'toggleDisabled', 'deleteFeature']),
+    ...mapMutations('projects', ['setSelected', 'toggleDisabled', 'deleteProject']),
     ...mapMutations('overpanel', ['openOverpanel']),
   },
 }
@@ -90,9 +97,14 @@ export default {
   .project-controls {
     width: 14rem;
     display: flex;
-    flex-direction: row-reverse;
-    justify-content: space-between;
+    flex-direction: row;
+    justify-content: flex-end;
     align-content: center;
+  }
 
+  .project-selected {
+    font-weight: 300;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
   }
 </style>
