@@ -34,13 +34,13 @@ export default {
 </script>
 
 <style>
-.links {
-  padding-top: 15px;
-}
+  .links {
+    padding-top: 15px;
+  }
 
-.toolbar {
-  display: flex;
-  flex-direction: row-reverse;
-}
+  .toolbar {
+    display: flex;
+    flex-direction: row-reverse;
+  }
 </style>
 
