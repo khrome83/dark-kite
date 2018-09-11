@@ -3,9 +3,10 @@
     <h1>Projects</h1>
     <h2>Subheading</h2>
     <project-list />
-    <div>
-      <base-button target="_blank" alt>Testing</base-button>
-      <base-button href="https://insiderx.com" target="_blank" secondary>Testing</base-button>
+    <div class="toolbar">
+      <base-button over-panel="FeatureCreate">
+        Create Project
+      </base-button>
     </div>
   </div>
 </template>
@@ -27,8 +28,13 @@ export default {
 </script>
 
 <style>
-.links {
-  padding-top: 15px;
+  .links {
+    padding-top: 15px;
+  }
+
+  .toolbar {
+    display: flex;
+    flex-direction: row-reverse;
 }
 </style>
 
