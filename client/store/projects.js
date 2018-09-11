@@ -71,10 +71,10 @@ export const actions = {
       projectList.push(project.id);
     });
 
-    const id = projectsList[0];
+    const id = projectList[0];
 
     // Set Project Definitions
-    commit('setPorjects', { projects, projectList });
+    commit('setProjects', { projects, projectList });
 
     // Make first project selected
     commit('setSelectedIfEmpty', id);
