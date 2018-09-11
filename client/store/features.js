@@ -60,8 +60,9 @@ export const mutations = {
 
 export const actions = {
   // TODO: only requet if features for project ID are not known
-  async fetchFeatures ({ commit }) {
-    const { data } = await axios.get('/data/features.json')
+  async fetchFeatures ({ rootState, commit }) {
+    const id = rootState.projects.projects[rootState.projects.selected].identifier;
+    const { data } = await axios.get(`/data/features/${id}.json`)
 
     const features = {};
     const featureList = [];
