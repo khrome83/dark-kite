@@ -4,15 +4,30 @@
       <div class="label">{{label}}</div>
       <div class="identifier">({{identifier}})</div>
     </div>
-    <div>{{description}}</div>
-    <div>{{disabled}}</div>
+    <div class="project-controls">
+      <toolbar-menu :disabled="disabled">
+        <template slot="active">
+          <a href="#">Edit Project</a>
+          <a href="#">Manage Users</a>
+          <a href="#">Disable Project</a>
+        </template>
+        <template slot="disabled">
+          <a href="#">Enable Project</a>
+          <a href="#">Delete Project</a>
+        </template>
+      </toolbar-menu>
+    </div>
   </div>
 </template>
 
 <script>
 import { mapMutations } from 'vuex';
+import ToolbarMenu from '~/components/ToolbarMenu';
 
 export default {
+  components: {
+    ToolbarMenu,
+  },
   props: {
     id: {
       type: String,
