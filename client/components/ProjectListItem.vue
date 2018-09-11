@@ -82,4 +82,13 @@ export default {
   .disabled .identifier {
     color: #747474;
   }
+
+  .project-controls {
+    width: 14rem;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-content: center;
+
+  }
 </style>
