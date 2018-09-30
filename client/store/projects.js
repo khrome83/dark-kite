@@ -5,6 +5,7 @@ export const state = () => ({
   projects: {},
   projectList: [],
   selected: null,
+  editing: null,
 });
 
 export const mutations = {
@@ -21,6 +22,10 @@ export const mutations = {
     if (state.selected === null || state.projects[id] === undefined) {
       state.selected = id;
     }
+  },
+
+  setEditing (state, id) {
+    state.editing = id;
   },
 
   toggleDisabled (state, id) {
