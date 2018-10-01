@@ -135,7 +135,8 @@ label {
   font-weight: 500;
 }
 
-input {
+input,
+textarea {
   border: 1px solid #d6d5d5;
   border-radius: 0.25rem;
   padding: 1rem;
@@ -143,6 +144,11 @@ input {
   font-size: 1rem;
   display: block;
   width: 100%;
+}
+
+textarea {
+  min-height: 9rem;
+  margin-bottom: 2rem;
 }
 
 fieldset {
