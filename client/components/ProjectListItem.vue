@@ -11,7 +11,7 @@
           <template v-if="selected !== id">
             <a href="#" @click="setSelected(id)">Select Project</a>
           </template>
-          <a href="#">Edit Project</a>
+          <a href="#" @click="editProject(id)">Edit Project</a>
           <a href="#">Manage Users</a>
           <a href="#" @click="toggleDisabled(id)">Disable Project</a>
         </template>
@@ -58,7 +58,11 @@ export default {
     ...mapState('projects', ['selected']),
   },
   methods: {
-    ...mapMutations('projects', ['setSelected', 'toggleDisabled', 'deleteProject']),
+    editProject (id) {
+      this.setEditing(id);
+      this.openOverpanel('ProjectEdit');
+    },
+    ...mapMutations('projects', ['setSelected', 'setEditing', 'toggleDisabled', 'deleteProject']),
     ...mapMutations('overpanel', ['openOverpanel']),
   },
 }
