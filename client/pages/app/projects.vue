@@ -4,7 +4,7 @@
     <h2>Subheading</h2>
     <project-list />
     <div class="toolbar">
-      <base-button over-panel="FeatureCreate">
+      <base-button over-panel="ProjectCreate">
         Create Project
       </base-button>
     </div>
