@@ -7,7 +7,7 @@
       </div>
       <div>
         <label for="description">Description</label>
-        <textarea type="text" name="description" id="description" v-model="newDescription" required>
+        <textarea type="text" name="description" id="description" v-model="newDescription" required />
       </div>
     </fieldset>
     <div class="form-control">
